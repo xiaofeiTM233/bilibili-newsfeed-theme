@@ -15,35 +15,37 @@
 
 ## 效果
 
-- 主页
+> 点击文字跳转图片源文件
+
+- [主页](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/1.png)
 
 ![主页](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/1.png)
 
-- 投稿视频
+- [投稿视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/2.png)
 
 ![投稿视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/2.png)
 
-- 图文动态
+- [图文动态](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/3.png)
 
 ![图文动态](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/3.png)
 
-- 专栏
+- [专栏](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/4.png)
 
 ![专栏](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/4.png)
 
-- 直播
+- [直播](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/5.png)
 
 ![直播](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/5.png)
 
-- 转发视频
+- [转发视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/6.png)
 
 ![转发视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/6.png)
 
-- 转发图文
+- [转发图文](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/7.png)
 
 ![转发图文](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/7.png)
 
-- 含相关信息
+- [含相关信息](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/8.png)
 
 ![含相关信息](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/8.png)
 
