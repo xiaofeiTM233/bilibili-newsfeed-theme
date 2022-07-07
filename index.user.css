@@ -1,10 +1,10 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.1.0+20220707
+@version        2.1.1+20220707
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
-@homepageURL    https://github.com/xiaofeiTM233/userstyles.world
+@homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
 @supportURL     https://club.afox.tk
 @updateURL      https://userstyles.world/api/style/5471.user.css
 @license        MIT
@@ -18,7 +18,7 @@
 	BG_2 "unsplash随机" <<<EOT url(https://source.unsplash.com/1920x1080/?nature) EOT;
 	BG_3 "BML2019 VR（pid: 74271400）" <<<EOT url(https://i.loli.net/2020/05/25/DA46cLGaPrhYqnl.jpg) EOT;
 	BG_4 "2020拜年祭活动 " <<<EOT url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg) EOT;
-	BG_5 "2020BDF" <<<EOT url(https://userstyles-world-xiaofeitm233.vercel.app/bilibili-simple-home/img/2020BDF.jpg) EOT;
+	BG_5 "2020BDF" <<<EOT url(https://cdn.afox.tk/userstyles/img/2020BDF.jpg) EOT;
    BG_DIV "自定义" <<<EOT var(--activity-bg-custom) EOT;
 }
 
@@ -85,7 +85,7 @@ body{/*
     /*导入logo字体*/
     @font-face {
 		font-family: 'Bilibili Icon';
-		src: url('https://userstyles-world-xiaofeitm233.vercel.app/bilibili-simple-home/fonts/Bilibili_Icon.ttf') format('truetype');
+		src: url('https://cdn.afox.tk/userstyles/fonts/Bilibili_Icon.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
