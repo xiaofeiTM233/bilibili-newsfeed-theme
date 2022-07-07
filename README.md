@@ -1,6 +1,6 @@
-# 样式 styles
+# 哔哩哔哩动态页主题
 
-发布在[此网站](https://userstyles.world)上的一些用于 `Stylus` 插件的CSS样式
+发布在[此网站](https://userstyles.world)上的一个用于 `Stylus` 插件的CSS样式
 
 ## 安装
 
@@ -11,9 +11,7 @@
 - Firefox 自己到商店安装
 - Edge 自己到商店安装
 
-2. [哔哩哔哩动态页主题<点击此处安装或更新](https://github.com/xiaofeiTM233/userstyles.world/raw/main/bilibili-activity-theme/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
-
-3. [哔哩哔哩搜索引擎首页样式<点击此处安装或更新](https://github.com/xiaofeiTM233/userstyles.world/raw/main/bilibili-simple-home/index.user.css) [前往原作仓库](https://github.com/hakadao/bilibili-simple-home)
+2. [点击此处安装或更新](https://github.com/xiaofeiTM233/userstyles.world/raw/main/bilibili-activity-theme/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
 
 ## 效果
 
