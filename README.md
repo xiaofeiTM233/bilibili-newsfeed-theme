@@ -1,4 +1,4 @@
-# 哔哩哔哩动态页主题
+# 哔哩哔哩动态页主题（翻新）
 
 发布在[此网站](https://userstyles.world)上的一个用于 `Stylus` 插件的CSS样式
 
