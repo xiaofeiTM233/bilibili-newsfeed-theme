@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.1.1+20220707
+@version        2.1.3+20220825
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -72,9 +72,6 @@ body{/*
     background-attachment: fixed;*/
     background: var(--activity-bgimg) no-repeat fixed 50% 0;
     background-size: cover;
-}
-#app .bg/*背景图像*/{
-    background:url(#);
 }
 }
 
@@ -430,7 +427,7 @@ body{/*
 		justify-content: center;
 	}
 	/*投稿图标不变色*/
-	.bili-header .slide-down [class$="entry"] span:not(:nth-last-child),
+	.bili-header .slide-down [class$="entry"] span:not(.nth-last-child),
 	.bili-header .slide-down [class$="entry"] svg {
 		color: var(--activity-text-1)!important;
 	}
@@ -1008,7 +1005,15 @@ body{/*
 .bili-rich-text-link::before,.bili-dyn-topic__icon/*视频卡片信息区话题图标*/{
     filter:brightness(125%);
 }
-.bili-rich-text-topic,.bili-rich-text-link,.bili-rich-text__action,.bili-dyn-card-video__title.bili-ellipsis:hover,.bili-rich-text-module.lottery,.bili-dyn-topic__text,.bili-dyn-card-pgc__title.bili-ellipsis:hover/*视频卡片信息区话题字体*/{
+.bili-rich-text-topic,
+.bili-rich-text-link,
+.bili-rich-text__action,
+.bili-rich-text-module.lottery,
+.bili-dyn-topic__text,
+.bili-dyn-card-music:hover .bili-dyn-card-music__title,
+.bili-dyn-card-article:hover .bili-dyn-card-article__title,
+.bili-dyn-card-video:hover .bili-dyn-card-video__title,
+.dyn-reserve__lottery__text/*卡片信息区话题字体*/{
     color:rgb(0, 179, 255)
 }
 .bili-rich-text-topic:hover,.bili-rich-text-link:hover,.bili-rich-text-module.at:hover,.bili-rich-text-module.lottery:hover,.bili-dyn-topic__card:hover/*当光标在话题上时*/{
@@ -1021,7 +1026,7 @@ body{/*
 .bili-rich-text__content,.bili-rich-text__content.folded.line--6/*动态卡片信息区*/{
     width:520px;
 }
-.bili-dyn-card-video__body,.bili-dyn-card-live__body,.bili-dyn-card-pgc__body/*视频、直播、番剧卡片信息区*/{
+.bili-dyn-card-video__body,.bili-dyn-card-live__body,.bili-dyn-card-pgc__body,.bili-dyn-card-music/*视频、直播、番剧、音乐卡片信息区*/{
     border-radius:14px;
     background:rgba(255,255,255,0.1);
     border:0;
@@ -1029,7 +1034,7 @@ body{/*
 .bili-dyn-card-video__header/*视频封面*/{
     border-radius:14px
 }
-.bili-dyn-card-video,.bili-dyn-card-live.rcmd,.bili-dyn-card-pgc {
+.bili-dyn-card-video,.bili-dyn-card-live.rcmd,.bili-dyn-card-pgc,.bili-dyn-card-live {
     border: 0px;
 }
 .bili-dyn-title__text.bili-dyn-title__text.default,.dyn-orig-author__name/*非大会员up昵称*/{
@@ -1061,7 +1066,7 @@ body{/*
 .bili-dyn-content__orig__major/*转发图文卡片*/{
     padding-right: 13px;
 }
-.bili-dyn-card-article/*图文信息卡片*/{
+.bili-dyn-card-article,.dyn-ugc__cover/*图文信息卡片*/{
     border-radius:14px;
     background:rgba(255,255,255,0.1);
     border:0;
@@ -1069,10 +1074,10 @@ body{/*
 .bili-awesome-img/*图文封面圆角*/{
     border-radius:14px;
 }
-.bili-dyn-card-article__title/*图文标题*/{
+.bili-dyn-card-article__title,.bili-dyn-card-music__title/*图文标题*/{
     color:rgba(255,255,255,0.8)
 }
-.bili-dyn-card-article__desc.bili-ellipsis/*图文副标题*/{
+.bili-dyn-card-article__desc.bili-ellipsis,.bili-dyn-card-music__label/*图文副标题*/{
     color:rgba(255,255,255,0.45)
 }
 .dyn-additional-common__mark/*“相关作品”文字调整*/{
@@ -1103,15 +1108,15 @@ body{/*
 .bili-dyn-forward-publishing__editor,.bili-dyn-card-common.style--1/*分享信息卡片背景*/{
     background-color:rgba(255,255,255,0.1);
 }
-.dyn-reserve__card,.dyn-vote__body,.dyn-vote__cover,.dyn-additional-common__wrap,.dyn-additional-common__cover/*相关信息卡片背景*/{
+.dyn-reserve__card,.dyn-vote__body,.dyn-vote__cover,.dyn-additional-common__wrap,.dyn-additional-common__cover,.dyn-ugc,.dyn-ugc__wrap/*相关信息卡片背景*/{
     background-color:rgba(255,255,255,0.1)!important;
     border-radius:14px;
     margin-right: 13px;
 }
-.dyn-reserve__title,.dyn-vote__detail__title,.dyn-additional-common__detail__title,.bili-dyn-card-common__title/*相关信息卡片标题*/{
+.dyn-reserve__title,.dyn-vote__detail__title,.dyn-additional-common__detail__title,.bili-dyn-card-common__title,.dyn-ugc__detail__title.multi-line/*相关信息卡片标题*/{
     color:rgba(255,255,255,0.8);
 }
-.dyn-reserve__desc__first,.dyn-reserve__desc__second,.dyn-additional-common__detail__desc,.bili-dyn-card-common__desc/*相关信息卡片副标题*/{
+.dyn-reserve__desc__first,.dyn-reserve__desc__second,.dyn-additional-common__detail__desc,.bili-dyn-card-common__desc,.dyn-ugc__detail__desc/*相关信息卡片副标题*/{
     color:rgba(255,255,255,0.4);
 }
 .dyn-reserve__action button,.dyn-additional-common__action button,.dyn-orig-author__following/*相关信息卡片相关按钮*/{
@@ -1364,7 +1369,6 @@ body{/*
     border-radius:28px;
     margin-bottom:7px;
     transition:all 0.2s;
-    border-radius:7px;
 }
 .dyn-topic__card:hover/*视频卡片信息区话题背景*/{
     background:rgba(255,255,255,0.1);
