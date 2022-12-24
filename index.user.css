@@ -692,7 +692,8 @@ body{/*
     color:rgba(255, 255, 255, .4)
 }
 .bili-user-profile,.bili-user-profile-view__avatar__face.bili-awesome-img{
-    border-radius: 25px!important
+    border-radius: 25px!important;
+	  overflow: hidden;
 }
 }
 
@@ -706,7 +707,8 @@ body{/*
 .bili-dyn-publishing/*动态发布卡片背景1*/{
     border-radius:28px;
     background-color:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(20px);
+	  z-index: 1;
 }
 .bili-rich-textarea__inner/*动态发布卡片背景2*/{
     border-radius:28px;
@@ -808,6 +810,7 @@ body{/*
 .bili-popover,.bili-popover__arrow/*emoji背景*/{
     background-color:rgba(51,51,51,1);
     border-radius:28px!important;
+	  border: none;
 }
 .bili-emoji__content{
     background-color:rgb(0,0,0,0)
@@ -821,12 +824,13 @@ body{/*
 }
 .bili-emoji__pkgs,.bili-emoji__footer/*表情系列选择栏背景颜色*/{
     background-color:rgba(41,41,41,1)!important;
-    border-radius:14px;
+    border-radius:28px;
 }
 .bili-emoji__pkg.active/*已选择表情系列背景颜色*/{
     background-color:rgba(71,71,71,1);
     border-radius:14px
 }
+.bili-emoji__pkg:not(.active):hover,
 .bili-emoji__pkg:hover/*光标在未选择表情系列上时，为本主题新增效果*/{
     background-color:rgba(56,56,56,1);
     border-radius:14px
