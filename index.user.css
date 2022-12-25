@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.4.0+20221225
+@version        2.4.1+20221225
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -9,6 +9,9 @@
 @updateURL      https://userstyles.world/api/style/5471.user.css
 @license        MIT
 @preprocessor   uso
+
+\/*原样式：https://userstyles.world/style/2677/bilibili*\/
+\/*原作者：noname <https://userstyles.world/user/noname> <https://space.bilibili.com/164644572>*\/
 
 @advanced color T_THEME_COLOR_NEW "选择主题色（十六进制非透明颜色，如默认蓝 #00a1d6、默认粉 #fb7299）" #00a1d6
 
@@ -136,6 +139,37 @@
     #app > div.bili-dyn-home--member > aside.right > section:nth-child(1) {
 		display:none!important;
     }
+    EOT;
+}
+
+@advanced dropdown L_BLUR "减少毛玻璃效果提升性能" {
+    OFF "关闭" <<<EOT EOT;
+    ON "开启" <<<EOT
+.bili-dyn-my-info,
+.bili-dyn-my-info--skeleton,
+.bili-dyn-live-users,
+.bili-dyn-publishing,
+.bili-dyn-up-list,
+.bili-dyn-list-tabs,
+.bili-dyn-list__notification,
+.bili-dyn-item,
+.bili-dyn-list-loading,
+.card[data-v-5ae963b0],
+.bili-dyn-banner,
+.topic-panel,
+.bili-dyn-my-info,
+.bili-dyn-my-info--skeleton,
+.bili-dyn-live-users,
+.bili-dyn-publishing,
+.bili-dyn-up-list,
+.bili-dyn-list-tabs,
+.bili-dyn-list__notification,
+.bili-dyn-item,
+.bili-dyn-list-loading,
+.bili-dyn-banner,
+.topic-panel{
+    backdrop-filter:blur(20px)!important;
+}
     EOT;
 }
 
@@ -617,7 +651,7 @@
 .bili-dyn-my-info, .bili-dyn-my-info--skeleton/*左上个人卡片*/{
     border-radius:28px;
     background:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
     padding:10px;
     width:224px;/*原为244px*/
     height:168px;/*原为188px*/
@@ -643,7 +677,7 @@
 .bili-dyn-live-users/*直播列表卡片*/{
     border-radius:28px;
     background:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
     margin-top:10px;
     padding-bottom:4px;
 }
@@ -938,7 +972,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .bili-dyn-up-list/*最常浏览up主卡片背景*/{
     border-radius:28px;
     background:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
 }
 .bili-dyn-up-list__item__name.bili-ellipsis,.bili-dyn-up-list__item__name/*最常浏览up主卡片字体颜色*/{
     color:rgba(255,255,255,0.8);
@@ -954,7 +988,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .bili-dyn-list-tabs/*动态视频分类*/{
     border-radius:28px;
     background:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
 }
 .bili-dyn-list__notification/*有新动态卡片样式*/{
     background:rgba(252,249,215,0.5);
@@ -1870,7 +1904,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .bili-dyn-banner/*公告栏卡片背景*/{
     border-radius:28px;
     background-color:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
     padding:7px 0px;
     padding-bottom:0px;
     
@@ -1895,7 +1929,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .topic-panel/*话题卡片背景*/{
     border-radius:28px;
     background-color:rgba(0,0,0,0.5);
-    backdrop-filter:blur(100px);
+    backdrop-filter:blur(60px);
     padding:14px 14px;
     padding-bottom:3.5px;
 }
@@ -2270,6 +2304,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     /*[[BANNER]]*/
     /*[[CAPSULE_DESIGN]]*/
     /*[[GPUS]]*/
+    /*[[L_BLUR]]*/
     
 	/*处理顶栏链接内容，使其在自定义背景下banner上方文字链接有阴影使其能看清文字*/
 		.bili-header :not(.slide-down) .right-entry {
