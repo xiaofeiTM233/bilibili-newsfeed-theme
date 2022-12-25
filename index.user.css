@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.3.0+20221224
+@version        2.3.1+20221225
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -38,7 +38,8 @@
 .bili-dyn-action:hover,
 .bili-dyn-more__menu__item:hover,
 .bili-dyn-action:not(.disabled).active,
-.bili-dyn-action:not(.disabled):hover{
+.bili-dyn-action:not(.disabled):hover,
+.bili-comment-option__item.active{
     color:#fb7299;
 }
 .bili-dyn-action.like:hover i
@@ -63,6 +64,18 @@
 }
 .dyn-vote__cover{
     background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOSI+PHBhdGggZD0iTTMuMyAyOC4zQzEuNSAyOC4zIDAgMjYuOSAwIDI1VjEwLjFjMC0xLjggMS41LTMuMyAzLjMtMy4zczMuMyAxLjUgMy4zIDMuM1YyNWMuMSAxLjktMS40IDMuMy0zLjMgMy4zek0zLjMgOGMtMS4yIDAtMi4xIDEtMi4xIDIuMVYyNWMwIDEuMiAxIDIuMSAyLjEgMi4xczIuMS0xIDIuMS0yLjFWMTAuMUM1LjUgOC45IDQuNSA4IDMuMyA4ek0xNCAyOC40Yy0xLjggMC0zLjMtMS41LTMuMy0zLjNWMy4zQzEwLjcgMS41IDEyLjIgMCAxNCAwczMuMyAxLjUgMy4zIDMuM1YyNWMwIDEuOS0xLjUgMy40LTMuMyAzLjR6bTAtMjcuMmMtMS4yIDAtMi4xIDEtMi4xIDIuMVYyNWMwIDEuMiAxIDIuMSAyLjEgMi4xIDEuMiAwIDIuMS0xIDIuMS0yLjFWMy4zYzAtMS4xLS45LTIuMS0yLjEtMi4xem0xMC43IDI3LjJjLTEuOCAwLTMuMy0xLjUtMy4zLTMuM3YtNi44YzAtMS44IDEuNS0zLjMgMy4zLTMuM3MzLjMgMS41IDMuMyAzLjNWMjVjMCAxLjktMS41IDMuNC0zLjMgMy40em0wLTEyLjNjLTEuMiAwLTIuMSAxLTIuMSAyLjFWMjVjMCAxLjIgMSAyLjEgMi4xIDIuMXMyLjEtMSAyLjEtMi4xdi02LjhjMC0xLjItMS0yLjEtMi4xLTIuMXoiIGZpbGw9IiNmYjcyOTkiLz48L3N2Zz4=)!important;
+}
+.bili-date-picker-input__suffix--calendar-active{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAAXNSR0IB2cksfwAAAKVQTFRF////AAAA+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ+3KZ////v1XL3AAAADd0Uk5TAQAMOnGAWsX6/615RspsSEDGDfuycHNKvyPf9F3D6h6qVbQtIJ1glsxmMy65dBas22E8yBAwAve/KRcAAAGpSURBVHic7Zd3r4IwFMUtQ0SZstw4cO/1vv9He1xKK09N08aXSIznL09zzy/Qgb2VCnpNr+ZLBpBkReWQIktPAVWtpnOqplUfAXXeNFb9HiAWB/0FNMQBjSLAyIZMy3Y4ZFtmVm4UAC4MqPxrp0K9ewM0vdT7/HmE/DTgNSnAAWAgAggg4VBACDYSAUSQCClApTxeOXTSPgrQEtITgLhKB3h5Dt6/jF/ABwHafqdr0u9zrz8Y9HvEqWa347fZgBjv8iFOjLAbYTfELmYCxvk5yf48J+TUTMBVczNmARISmcLwjLgZuClxCQPgkKIWHaaVLeIcBiAmRfPiQ+MXmhMXs+ZgkRctwaxIZAVumZsFcxLXuGiD532L3Ra7DXZr9j7Y7XX9cCQrfzrr+vlE3PGg6/sdex+kulxRQUlSdNdL/qPMZ+ELeBtAAWuLAGxIKBQgg7VEABYkZAqQ4KJvigDgsluTKABp9JX4lE2ahm4A/Onwg4jnsh0F/u0zQ677gu0GKG85/qvhEG45GugegAzX4017roEeAWnb4IQ8bV/oNAuhcnWubwH8/AKJglCTjP7hkgAAAABJRU5ErkJggg==)
+}
+.bili-picker-input__suffix--up{
+    border-bottom: 2px solid #fb7299;
+    border-left: 2px solid #fb7299;
+}
+.bili-date-table tbody tr td.active,
+.bili-picker__option.active{
+    border: 1px solid #fb7299;
+    color: #fb7299;
 }
     EOT;
 }
@@ -787,14 +800,14 @@
 .bili-at-popup__user-name/*列表内的人昵称*/{
     color:rgba(255,255,255,0.8)
 }
-.bili-create-poll__opt__title,.bili-radio__label{
-    color:#fff!important;
+.bili-create-poll__opt__title,.bili-radio__label,.bili-pics-uploader__title,.bili-comment-option__item{
+    color:#fff;
 }
-.bili-create-poll-add,.bili-radio.checked,.bili-radio__inner{
+.bili-input__inner,.bili-input:hover:before,.bili-radio__inner,.bili-create-poll-add{
     color:var(--activity-theme-color);
     border-color:var(--activity-theme-color)!important;
 }
-.bili-input.bili-input--suffix::before/*投票页填写标题文本框样式*/{
+.bili-input__inner/*投票页填写标题文本框样式*/{
     background-color:rgba(71,71,71,1);
     border:1px solid rgba(255,255,255,0.5);
 }
@@ -802,56 +815,74 @@
     background-color:#00000000;
     color:rgba(255,255,255,0.6);
 }
-.bp-vote-container button, .bp-vote-container form, .bp-vote-container input, .bp-vote-container li, .bp-vote-container ol, .bp-vote-container p, .bp-vote-container td, .bp-vote-container textarea, .bp-vote-container textarea:focus, .bp-vote-container ul, .bp-vote-container input:focus/*文本框输入文字样式*/{
-    color:rgba(255,255,255,0.8);
+.bili-input__inner/*文本框输入文字样式*/{
+    color:rgba(255,255,255,0.8)!important;
 }
 .bp-input .input[data-v-793bb182]/*文本框文字背景*/{
     background-color:#00000000;
 }
-    .bili-radio__inner:after{
+.bili-radio__inner:after/*投票类型选项*/{
     background-color: var(--activity-theme-color); 
-    }
-
-.bp-radio[data-v-55c64c29]/*投票类型选项*/{
-    color:rgba(255,255,255,0.7);
 }
-.bp-vote-container input:focus, .bp-vote-container input, .bp-vote-container textarea, .bp-vote-container textarea:focus, .bp-vote-container select, .bp-vote-container button/*更多设置多选表单文字及背景样式*/{
+.bili-select-dropdown,.cancel/*更多设置多选表单文字及背景样式*/{
     color:rgba(255,255,255,0.8);
     background-color:rgba(71,71,71,1);
 }
-.bili-input__inner::before /*更多设置多选表单边框样式*/{
+.bili-input__inner::before,.bili-comment-option/*更多设置多选表单边框样式*/{
     border-radius:14px;
     background-color:rgba(71,71,71,1);
+    border:0px;
+}
+.bili-select-dropdown__item:hover,.bili-comment-option__item:hover/*鼠标在选项上时*/{
+    border-radius:14px;
+    background-color: #f4f5f720;
     border:0px;
 }
 .bili-popover-modal__button.confirm:not(.disabled) {
     background-color: var(--activity-theme-color);
     color: #fff;
 }
+div.bili-picker-input.bili-input.bili-input--suffix.small > input/*日期,小时,分钟选择表单背景样式*/{
+    border:0;
 }
-@-moz-document url-prefix("https://t.bilibili.com") {
-/*@$!#动态页中列上未完成部分*/
-    
-.button-bar[data-v-4b97839a]::before/*去除底部按钮上部的水平线*/{
-    border:0
-}
-.button-bar[data-v-4b97839a]/*底部按钮栏配色*/{
-    border-radius:14px;
-    background-color:rgba(0,0,0,0.15);
-}
-.bp-button[data-v-b26b5ce0],.bili-popup-layer__button[data-v-1346152a]/*底部按钮文字样式*/{
+div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,小时,分钟表单样式*/{
+    background:rgba(71, 71, 71, .2);
     color:rgba(255,255,255,0.8);
 }
-.bp-button[data-v-b26b5ce0]::before,.bili-popup-layer__button[data-v-1346152a]::before/*底部按钮样式*/{
+.bili-picker-panel/*选择日期,小时,分钟弹出界面背景样式*/{
+    background-color:rgba(51,51,51,1);
+    border:1px solid rgba(51,51,51,1);
     border-radius:14px;
-    background-color:rgba(255,255,255,0.1);
-    border:0px;
+    box-shadow:10px 10px 50px rgba(0,0,0,0.4);
+}
+.bili-date-picker__header > */*选择日期弹出界面头部年月选择栏*/{
+    border-bottom:0;
+    color:rgba(255,255,255,0.7);
+    background:rgba(255,255,255,0);
+    border-radius:14px
+}
+.bili-date-table thead tr th/*选择日期弹出界面星期栏*/{
+    color:rgba(255,255,255,0.8);
+    background:rgba(255,255,255,0.1);
+    border-radius:7px;
+}
+.bili-date-table > tbody > tr > td.disabled/*选择日期弹出界面不可选日期字体样式*/{
+    color:rgba(255,255,255,0.3);
+}
+.bili-date-picker__body > table > tbody > tr > td,.bili-picker__option/*选择日期弹出界面可选日期字体样式*/{
+    color:rgba(255,255,255,0.8);
+}
+.bili-date-table tbody tr td.active,.bili-picker__option.active/*选择日期弹出界面已选日期样式*/{
+    border: 1px solid rgb(0, 179, 255);
+    border-radius: 4px;
+    color: rgb(0, 179, 255);
+    font-weight: normal;
+}
+.bili-date-table td, .bili-date-table th/*选择日期弹出界面移除限高*/{
+    height:auto!important;
 }
 .bili-dyn-publishing-timing-setting/*预约标题背景*/{
     background-color:rgb(255,255,255,.2);
-}
-.bili-border[data-v-5e65f7e3]::before/*预约标题文本框边框样式*/{
-    border-radius:14px;
 }
 .bili-dyn-publishing-timing-setting__label,.bili-time-picker__child__unit,.bili-reserve__type,.bili-reserve__form__title/*预约标题文本样式*/{
     color:rgba(255,255,255,0.8);
@@ -862,39 +893,8 @@
 .bili-dyn-publishing__hint/*预约标题字数计数器位置修复*/{
     bottom:0px;
 }
-.date-input[data-v-3c2cbaaf]/*去除选择日期父元素颜色*/{
-    background:#00000000;
-    color:black;
-}
-.dynamic-reserve[data-v-1533c9fb] .date-picker .date-input::before,.dynamic-reserve[data-v-1533c9fb] .date-picker .scroll-input .s-input-wrap::before/*日期,小时,分钟选择表单背景样式*/{
-    border:0;
-}
-.dynamic-reserve[data-v-1533c9fb] .date-picker .date-input input,.dynamic-reserve[data-v-1533c9fb] .date-picker .scroll-input input/*选择日期,小时,分钟表单样式*/{
-    background:rgba(71,71,71,1);
-    color:rgba(255,255,255,0.8);
-}
-.date-panel[data-v-3c2cbaaf], .date-panel[data-v-3c2cbaaf]:hover,.s-panel[data-v-b2849f14]/*选择日期,小时,分钟弹出界面背景样式*/{
-    background-color:rgba(51,51,51,1);
-    border:1px solid rgba(51,51,51,1);
-    border-radius:14px;
-    box-shadow:10px 10px 50px rgba(0,0,0,0.4);
-}
-.bili-date-picker__header/*选择日期弹出界面头部年月选择栏*/{
-    border-bottom:0;
-    color:rgba(255,255,255,0.7);
-    background:rgba(255,255,255,0);
-    border-radius:14px
-}
-.bili-date-table__row/*选择日期弹出界面星期栏*/{
-    color:rgba(255,255,255,0.8);
-    background:rgba(255,255,255,0.1);
-    border-radius:7px;
-}
-.day.disabled[data-v-3c2cbaaf]/*选择日期弹出界面不可选日期字体样式*/{
-    color:rgba(255,255,255,0.3);
-}
-.day[data-v-3c2cbaaf]/*选择日期弹出界面可选日期字体样式*/{
-    color:rgba(255,255,255,0.8);
+.bili-comment-option__item.active/*评论相关选项*/{
+    color:rgb(0, 179, 255);
 }
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
@@ -1100,12 +1100,15 @@
     background-color:var(--activity-theme-color-85);
     color:#fff
 }
+.details/*动态分享详情*/{
+    opacity: inherit;
+}
 }
  @-moz-document url-prefix("https://t.bilibili.com") {
 /*动态页中列评论*/
-.reply-notice/*评论广告*/{
-         display:none;
-     }
+.reply-notice/*移除评论广告*/{
+    display:none;
+}
 .bb-comment, .comment-bilibili-fold,.comment-send-lite/*评论区背景*/{
     border-radius:14px;
     background:rgba(255,255,255,0.1)!important;
@@ -1116,7 +1119,8 @@
 .comment-header.clearfix,.bili-header .header-dynamic-avatar[data-v-1f26cd36]/*排序方式下水平线*/{
     border:0;
 }
-.bb-comment .comment-header .tabs-order li, .comment-bilibili-fold .comment-header .tabs-order li/*评论区排序方式*/{
+.bb-comment .comment-header .tabs-order li,
+.comment-bilibili-fold .comment-header .tabs-order li/*评论区排序方式*/{
     color:rgba(255,255,255,0.8);
     border:0;
     background:rgba(255,255,255,0.1);
@@ -1124,11 +1128,13 @@
     border-radius:7px;
     margin-left:10px
 }
-.bb-comment .comment-header .tabs-order li.on, .comment-bilibili-fold .comment-header .tabs-order li.on/*已选择排序方式阴影*/{
+.bb-comment .comment-header .tabs-order li.on,
+.comment-bilibili-fold .comment-header .tabs-order li.on/*已选择排序方式阴影*/{
     border-bottom:0px;
     box-shadow:0 5px 15px rgba(0,161,214,0.1);
 }
-.bb-comment .comment-header .tabs-order li.on:after, .comment-bilibili-fold .comment-header .tabs-order li.on:after/*去除排序方式底部小箭头*/{
+.bb-comment .comment-header .tabs-order li.on:after,
+.comment-bilibili-fold .comment-header .tabs-order li.on:after/*去除排序方式底部小箭头*/{
     height:0;
 }
 .textarea-container>::placeholder/*评论巨大文本框placeholder样式*/{
@@ -1137,7 +1143,9 @@
 .bb-comment .comment-send-lite.comment-send-lite{
     width:92%!important;
 }
-.bb-comment .comment-send .textarea-container .ipt-txt,.textarea-container textarea, .bb-comment .comment-send-lite.comment-send-lite .textarea-container .ipt-txt/*评论巨大文本框样式*/{
+.bb-comment .comment-send .textarea-container .ipt-txt,
+.textarea-container textarea,
+.bb-comment .comment-send-lite.comment-send-lite .textarea-container .ipt-txt/*评论巨大文本框样式*/{
     border:0;
     border-radius:7px;
     background-color:rgba(255,255,255,0.1);
@@ -1191,7 +1199,8 @@
 .bb-comment .comment-list .list-item .reply-box .reply-item .reply-con .user .name/*评论区评论的评论的用户名字体*/{
     color:rgba(255,255,255,0.9)
 }
-.bb-comment .comment-list .list-item .user .text-con, .comment-bilibili-fold .comment-list .list-item .user .text-con/*评论区评论的评论的评论*/{
+.bb-comment .comment-list .list-item .user .text-con,
+.comment-bilibili-fold .comment-list .list-item .user .text-con/*评论区评论的评论的评论*/{
     color:rgba(255,255,255,0.7)
 }
 .bb-comment .comment-list .list-item .info .btn-hover/*评论的评论下的赞及更多样式*/{
@@ -1212,7 +1221,8 @@
 .bb-comment .bottom-page.center a:hover/*评论的评论下的更多按钮颜色*/{
     color:rgb(0, 179, 255);
 }
-.bb-comment .comment-list .list-item .con, .comment-bilibili-fold .comment-list .list-item .con/*去除评论下划线*/{
+.bb-comment .comment-list .list-item .con,
+.comment-bilibili-fold .comment-list .list-item .con/*去除评论下划线*/{
     border:0;
 }
 .bb-comment .operation .opera-list/*评论的评论下的更多按钮弹出界面*/{
@@ -1220,11 +1230,13 @@
     color:rgba(255,255,255,0.6);
     border-radius:14px;
 }
-.bb-comment .comment-list .list-item .reply-box .view-more, .comment-bilibili-fold .comment-list .list-item .reply-box .view-more/*评论区“共XX条回复”字体样式*/{
+.bb-comment .comment-list .list-item .reply-box .view-more,
+.comment-bilibili-fold .comment-list .list-item .reply-box .view-more/*评论区“共XX条回复”字体样式*/{
     color:rgba(255,255,255,0.45)
 }
 
-.bb-comment .comment-list .list-item .info .reply-tags span, .comment-bilibili-fold .comment-list .list-item .info .reply-tags span/*评论区“up主觉得很赞”字体样式*/{
+.bb-comment .comment-list .list-item .info .reply-tags span,
+.comment-bilibili-fold .comment-list .list-item .info .reply-tags span/*评论区“up主觉得很赞”字体样式*/{
     background-color:rgba(255,255,255,0.2)!important;
     color:rgba(255,255,255,0.6)!important;
     border-radius:7px;
