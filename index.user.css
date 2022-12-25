@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.3.1+20221225
+@version        2.4.0+20221225
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -10,28 +10,28 @@
 @license        MIT
 @preprocessor   uso
 
-@advanced color activity_THEME_COLOR_NEW "选择主题色（十六进制非透明颜色，如默认蓝 #00a1d6、默认粉 #fb7299）" #00a1d6
+@advanced color T_THEME_COLOR_NEW "选择主题色（十六进制非透明颜色，如默认蓝 #00a1d6、默认粉 #fb7299）" #00a1d6
 
-@advanced dropdown activity_DIV_BG "选择背景" {
-	BG_NONE "无背景"  <<<EOT "" EOT;
-	BG_1 "明日方舟三周年" <<<EOT url(https://patchwiki.biligame.com/images/arknights/c/c9/psoo48qt7zl4xb1ly1ldmngio7suc37.jpg) EOT;
-	BG_2 "unsplash随机" <<<EOT url(https://source.unsplash.com/1920x1080/?nature) EOT;
-	BG_3 "BML2019 VR（pid: 74271400）" <<<EOT url(https://i.loli.net/2020/05/25/DA46cLGaPrhYqnl.jpg) EOT;
+@advanced dropdown T_DIV_BG "选择背景" {
+	BG_1 "BML2019 VR（pid: 74271400）" <<<EOT url(https://i.loli.net/2020/05/25/DA46cLGaPrhYqnl.jpg) EOT;
+	BG_2 "明日方舟三周年" <<<EOT url(https://patchwiki.biligame.com/images/arknights/c/c9/psoo48qt7zl4xb1ly1ldmngio7suc37.jpg) EOT;
+	BG_3 "unsplash随机" <<<EOT url(https://source.unsplash.com/1920x1080/?nature) EOT;
 	BG_4 "2020拜年祭活动 " <<<EOT url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg) EOT;
 	BG_5 "2020BDF" <<<EOT url(https://pic.imgdb.cn/item/63830f1816f2c2beb1868554.jpg) EOT;
-   BG_DIV "自定义" <<<EOT var(--activity-bg-custom) EOT;
+	BG_NONE "无背景"  <<<EOT "" EOT;
+	BG_DIV "自定义" <<<EOT var(--activity-bg-custom) EOT;
 }
 
-@advanced text activity_CUSTOM_BG "自定义背景" "url()"
+@advanced text T_CUSTOM_BG "自定义背景" "url()"
 
-@advanced dropdown activity_THEME_COLOR_STYLE "图标样式" {
-	activity_THEME_COLOR_STYLE_HALF_1 "默认蓝 #00a1d6" <<<EOT
+@advanced dropdown T_THEME_COLOR_STYLE "图标样式" {
+	T_THEME_COLOR_STYLE_HALF_1 "默认蓝 #00a1d6" <<<EOT
 .bili-dyn-action:not(.disabled).active,
 .bili-dyn-action:not(.disabled):hover{
     color:rgb(0, 179, 255)
 }
     EOT;
-	activity_THEME_COLOR_STYLE_HALF_2 "默认粉 #fb7299" <<<EOT
+	T_THEME_COLOR_STYLE_HALF_2 "默认粉 #fb7299" <<<EOT
 .bili-dyn-action:hover,
 .bili-dyn-action.like.active,
 .bili-dyn-action.active,
@@ -39,7 +39,8 @@
 .bili-dyn-more__menu__item:hover,
 .bili-dyn-action:not(.disabled).active,
 .bili-dyn-action:not(.disabled):hover,
-.bili-comment-option__item.active{
+.bili-comment-option__item.active,
+.bili-dyn-live-users__more:hover{
     color:#fb7299;
 }
 .bili-dyn-action.like:hover i
@@ -77,6 +78,24 @@
     border: 1px solid #fb7299;
     color: #fb7299;
 }
+.bili-dyn-live-users__more:hover:after {
+    border-top: 1px solid #fb7299;
+    border-right: 1px solid #fb7299;
+}
+    EOT;
+}
+
+@advanced dropdown LOGO_COLOR "选择顶栏 LOGO 图标样式" {
+	LOGO_COLOR_THEME "跟随主题颜色" <<<EOT
+	.bili-header .left-entry__title::before {
+		color: var(--a-theme-color);
+	}
+    EOT;
+
+	LOGO_COLOR_WHITE "白色" <<<EOT
+	.bili-header .left-entry__title::before {
+		color: #FFF;
+	}
     EOT;
 }
 
@@ -108,6 +127,15 @@
 	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
 		color: #000;
 	}
+    EOT;
+}
+
+@advanced dropdown BANNER "隐藏公告栏（社区中心）" {
+    OFF "关闭" <<<EOT EOT;
+    ON "开启" <<<EOT
+    #app > div.bili-dyn-home--member > aside.right > section:nth-child(1) {
+		display:none!important;
+    }
     EOT;
 }
 
@@ -1052,7 +1080,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 }
 
 /*图标样式*/
-/*[[activity_THEME_COLOR_STYLE]]*/
+/*[[T_THEME_COLOR_STYLE]]*/
 
 .bili-dyn-forward-publishing__editor,.dyn-additional-common,.bili-dyn-card-common.style--1/*分享信息卡片形状*/{
     border-radius: 14px;
@@ -2185,12 +2213,12 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 		--activity-radius: 10px;
 
 		/*主题颜色*/
-		--activity-theme-color: /*[[activity_THEME_COLOR_NEW]]*/;
-		--activity-theme-color-85:/*[[activity_THEME_COLOR_NEW]]*/d6;
-		--activity-theme-color-50: /*[[activity_THEME_COLOR_NEW]]*/80;
-		--activity-theme-color-40: /*[[activity_THEME_COLOR_NEW]]*/66;
-		--activity-theme-color-30: /*[[activity_THEME_COLOR_NEW]]*/4d;
-		--activity-theme-color-20: /*[[activity_THEME_COLOR_NEW]]*/33;
+		--activity-theme-color: /*[[T_THEME_COLOR_NEW]]*/;
+		--activity-theme-color-85:/*[[T_THEME_COLOR_NEW]]*/d6;
+		--activity-theme-color-50: /*[[T_THEME_COLOR_NEW]]*/80;
+		--activity-theme-color-40: /*[[T_THEME_COLOR_NEW]]*/66;
+		--activity-theme-color-30: /*[[T_THEME_COLOR_NEW]]*/4d;
+		--activity-theme-color-20: /*[[T_THEME_COLOR_NEW]]*/33;
 
 		--activity-depth-1: 0 6px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.03);
 		--activity-depth-2: 0 9px 18px rgba(0, 0, 0, 0.07), 0 6px 12px rgba(0, 0, 0, 0.05);
@@ -2238,7 +2266,10 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 		scrollbar-color: hsl(0 0% 50% / .6) transparent;
 		scrollbar-width: thin !important;
 	}
+    /*[[LOGO_COLOR]]*/
+    /*[[BANNER]]*/
     /*[[CAPSULE_DESIGN]]*/
+    /*[[GPUS]]*/
     
 	/*处理顶栏链接内容，使其在自定义背景下banner上方文字链接有阴影使其能看清文字*/
 		.bili-header :not(.slide-down) .right-entry {
@@ -2248,7 +2279,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 		}
 
     :root {
-		--activity-bgimg: /*[[activity_DIV_BG]]*/;
-		--activity-bg-custom: /*[[activity_CUSTOM_BG]]*/;
+		--activity-bgimg: /*[[T_DIV_BG]]*/;
+		--activity-bg-custom: /*[[T_CUSTOM_BG]]*/;
 }
 }
