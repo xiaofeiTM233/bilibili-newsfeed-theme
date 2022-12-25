@@ -76,3 +76,15 @@
 /* 自定义背景格式 */
 url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg)
 ```
+
+## 关于原作
+原样式：[https://userstyles.world/style/2677/bilibili](https://userstyles.world/style/2677/bilibili)
+原作者：noname <[https://userstyles.world/user/noname](https://userstyles.world/user/noname)> <[https://space.bilibili.com/164644572](https://space.bilibili.com/164644572)>
+
+很抱歉没有在此翻新后的样式中加上原作者信息（忘了，现在加上了）
+
+个人很喜欢这种风格的b站，毕竟原版b站确实太丑了，也推荐给了一些朋友使用，反响不错。
+
+当时翻新的时候确实留下了一堆东西没有加上，但经过几次假期现已经基本完善了，跟原作者的差不多，并且加入了一些新的功能awa
+
+很高兴得到原作者的欣赏，我也会继续维护这个样式的
