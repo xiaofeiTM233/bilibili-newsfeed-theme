@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.2.8+20221214
+@version        2.3.0+20221224
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -18,7 +18,7 @@
 	BG_2 "unsplash随机" <<<EOT url(https://source.unsplash.com/1920x1080/?nature) EOT;
 	BG_3 "BML2019 VR（pid: 74271400）" <<<EOT url(https://i.loli.net/2020/05/25/DA46cLGaPrhYqnl.jpg) EOT;
 	BG_4 "2020拜年祭活动 " <<<EOT url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg) EOT;
-	BG_5 "2020BDF" <<<EOT url(https://cdn.afox.tk/userstyles/img/2020BDF.jpg) EOT;
+	BG_5 "2020BDF" <<<EOT url(https://pic.imgdb.cn/item/63830f1816f2c2beb1868554.jpg) EOT;
    BG_DIV "自定义" <<<EOT var(--activity-bg-custom) EOT;
 }
 
@@ -67,24 +67,62 @@
     EOT;
 }
 
+@advanced dropdown CAPSULE_DESIGN "顶栏右侧文字颜色设计" {
+    CAPSULE_DESIGN_1 "默认设计" <<<EOT
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
+		color: var(--activity-text-1);
+	}
+    EOT;
+
+    CAPSULE_DESIGN_2 "跟随主题色" <<<EOT
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
+		color: var(--activity-theme-color);
+		filter: drop-shadow(0 0 8px var(--activity-theme-color));
+	}
+    EOT;
+
+    CAPSULE_DESIGN_3 "白色" <<<EOT
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
+		color: #FFF;
+	}
+    EOT;
+
+    CAPSULE_DESIGN_4 "黑色" <<<EOT
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
+	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
+		color: #000;
+	}
+    EOT;
+}
+
+@advanced dropdown GPUS "强制开启硬件加速" {
+    OFF "关闭" <<<EOT EOT;
+    ON "开启" <<<EOT
+    * {
+		transform: translateZ(0);
+    }
+    EOT;
+}
+
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://t.bilibili.com") {
 
-    
 /*动态页背景*/
-body{/*
-    padding-top:10px;
-    font-family:Helvetica;
-    color:white;
-    background-color:#0f0f0f;
-    background:url(https://patchwiki.biligame.com/images/arknights/c/c9/psoo48qt7zl4xb1ly1ldmngio7suc37.jpg) no-repeat;
-    background-size:auto;    /*背景图片自动拉伸以铺满全屏*//*
-    background-position:top center;
-    background-attachment: fixed;*/
-    background: var(--activity-bgimg) no-repeat fixed 50% 0;
-    background-size: cover;
-}
+    html,
+    html body,
+    html:not(.iframe),
+    html:not(.iframe) body {
+		background: var(--activity-bgimg) no-repeat fixed 50% 0;
+		background-size: cover;
+		transform: none;
+	}
+    .bg {
+		background: #fff0!important;
+    }
 }
 
     @-moz-document url-prefix("https://t.bilibili.com") {
@@ -98,12 +136,7 @@ body{/*
 		font-weight: normal;
 		font-style: normal;
 	}
-	html,
-	html body,
-	html:not(.iframe),
-	html:not(.iframe) body {
-		background-color: var(--activity-bgcolor)!important
-	}
+
     /*顶栏logo*/
 	.bili-header .left-entry__title::before {
 		content: "\0042";
@@ -115,7 +148,7 @@ body{/*
 		color: white;
 		margin-right: 12px;
 	}
-	/*去除舊頂欄左側文字首頁，logo*/
+	/*LOGO修改*/
 	.bili-header .left-entry__title .mini-header__title > span,
 	.bili-header .left-entry__title .mini-header__logo {
 		display: none;
@@ -123,34 +156,6 @@ body{/*
 	.bili-header .left-entry__title .mini-header__title .mini-header__arrow {
 		color: white;
 		filter: drop-shadow(0 0 4px rgba(0, 0, 0, .3));
-	}
-	@keyframes headerSlideDown {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-	/*顶栏处于下拉状态时*/
-	.bili-header .bili-header__bar.slide-down {
-		background: unset;
-		box-shadow: none;
-		animation: .5s headerSlideDown;
-		position: fixed;
-	}
-	.bili-header .bili-header__bar::after {
-		content: "";
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 150px;
-		background: linear-gradient(rgba(0, 0, 0, .2), transparent);
-		z-index: -1;
-		pointer-events: none;
-		opacity: 0;
-		transition: .3s;
 	}
 	/*顶栏未读信息、未读动态*/
 	.bili-header [class^="red-num--"],
@@ -160,14 +165,6 @@ body{/*
 	}
     
 /*搜索栏*/
-	/*.bili-header :not(.slide-down) .center-search-container {
-		position: absolute;
-		width: 100%;
-		left: 0;
-		margin: 0;
-		display: flex;
-		justify-content: center;
-	})*/
 	/*搜索栏输入框文字清除图标*/
 	.bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-clean svg * {
 		fill: var(--activity-text-3)
@@ -220,17 +217,11 @@ body{/*
 	}
 	/*这里修改搜索栏的上间距 margin-top*/
 	.bili-header :not(.slide-down) .center-search-container .center-search__bar {
-		/*transform: translateY(30vh);*/
 		width: 500px;
 		max-width: unset;
 	}
 	.bili-header .center-search-container .center-search__bar {
 		transition: transform .3s;
-	}
-	@media screen and (max-height: 830px) {
-		/*.bili-header :not(.slide-down) .center-search-container .center-search__bar {
-			transform: translateY(220px);
-		}*/
 	}
 	.center-search-container .center-search__bar #nav-searchform.is-actived:before,
 	.bili-header .center-search-container .center-search__bar #nav-searchform.is-focus:before,
@@ -302,7 +293,6 @@ body{/*
 		color: var(--activity-text-1);
 		max-height: unset!important;
 		padding: 0 .5rem;
-		/*          margin-bottom: unset; */
 		border-radius: 14px;
 		transition: .3s;
 	}
@@ -337,16 +327,10 @@ body{/*
 		background: var(--activity-fill-1);
 	}
 	.bili-header .suggest_high_light {
-		/*         color: var(--activity-theme-color); */
 		color: var(--activity-text-1);
 		font-weight: 900;
 		transition: .3s;
 	}
-	/*.bili-header .suggest-item.active .suggest_high_light,
-	.bili-header .suggest-item:hover .suggest_high_light,
-	.bili-header .suggest-item:focus .suggest_high_light {
-		          color: white; 
-	}*/
 	/*右侧搜索按钮*/
 	.bili-header .center-search-container .center-search__bar .nav-search-btn {
 		background-color: transparent;
@@ -400,7 +384,6 @@ body{/*
     }
     /*新动态通知*/
 	.bili-header .channel-icons .channel-notify {
-		/* 		border-color: white; */
 		background: var(--activity-theme-color)
 	}
     /*动态 热门 频道*/
@@ -460,10 +443,6 @@ body{/*
 	.bili-header .header-avatar-wrap .header-avatar-wrap--container .bili-avatar {
 		border: none;
 	}
-   	/*.bili-header .right-entry__outside .right-entry-icon,
-	.bili-header .right-entry .right-entry-item .right-entry-text {
-		color: var(--activity-text-1);
-	}
 	/*顶栏右侧面板*/
 	.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
 		/*这里做的是鼠标滑过图标显示文字动画*/
@@ -475,7 +454,6 @@ body{/*
 	.bili-header .bili-header__bar.slide-down .right-entry__outside .right-entry-text {
 		/*当顶部链接效果是效果二时，右侧面板的图标和文字都有 filter: drop-shadow 的效果。slide-down 时要去掉阴影效果*/
 		filter: unset;
-		color: var(--activity-text-1)!important;
 	}
 	.bili-header .right-entry__outside:hover .right-entry-text {
 		opacity: 1;
@@ -557,27 +535,12 @@ body{/*
     /*去除礙眼物*/
 	/*顶栏左侧多余项目，保留首页按钮*/
 	.bili-header .left-entry li:not(:nth-child(1)),
-	/*.bili-header .bili-header__bar:not(.slide-down) .left-entry li:nth-child(1),*/
 	/*大会员*/
 	.bili-header .right-entry li:nth-child(2),
 	/*热门搜寻*/
 	.search-panel .trending,
-	/*推广*/
-	.eva-extension-area,
 	/*广告*/
-	.eva-banner,
-	.bili-footer,
-	/*顶栏动态图banner*/
-	.bili-header .bili-header__banner .banner-img,
-	/*新版首页无关推介*/
-	.feed2-recommend,
-	.feed-recommend2,
-	/*推介换一换按钮*/
-	.feed2 .feed-roll-btn,
-	/*新版首页分区*/
-	.channel-floor,
-	/*内测首页分区按钮*/
-	 .palette-feed4 .palette-button-wrap .primary-btn:nth-child(2){
+	.bili-footer{
 		display: none !important;
 	}
 	/*顶栏*/
@@ -585,54 +548,21 @@ body{/*
 		color: var(--activity-text-1);
 		transition: .3s;
 	}
-    
-    	/*内测顶栏*/
-	.bili-feed4 .bili-header .slide-down {
-		box-shadow: none !important;
-	}
-	.bili-header .left-entry {
-		margin-left: 1rem;
-	}
-	.bili-header .left-entry__title {
-		border-radius: 100px;
-		filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
-		/* 		padding: 0 25px; */
-		/* 		box-shadow: var(--a-depth-1) */
-	}
-    
-    	/*顶栏条*/
+   /*顶栏条*/
 	.bili-header .bili-header__bar {
 		margin-top: 8px;
-		/*修正全屏显示壁纸时元素宽度问题导致出现横向滚动条问题 #28，包括其他几个首页样式的横向滚动条问题*/
+	/*修正全屏显示壁纸时元素宽度问题导致出现横向滚动条问题，包括其他几个首页样式的横向滚动条问题*/
 		width: calc(100vw - 8px);
-		/*修正banner点击顶栏消失问题*/
+	/*修正banner点击顶栏消失问题*/
 		display: flex !important;
 	}
-  /*顶栏右侧内容 帐号 消息 动态 收藏...*/
-	.bili-header .slide-down .right-entry {
-		/*这里把它们做成胶囊效果*/
-		backdrop-filter: var(--activity-filter-glass);
-		border-radius: 100px;
-		box-shadow: var(--activity-depth-2);
-		background: var(--activity-elevated-2);
-		padding: 6px 0;
-	}
-	.bili-header .slide-down .left-entry .mini-header__title,
-	.bili-header .slide-down .left-entry .entry-title,
-	.bili-header .slide-down .left-entry .default-entry,
-	.bili-header .slide-down .left-entry .loc-mc-box__text,
-	.bili-header .slide-down .left-entry .download-entry,
-	.bili-header .slide-down .left-entry .loc-entry {
-		color: var(--activity-text-1);
-	}
-    
-    	/*顶栏右侧图标项目*/
+    /*顶栏右侧图标项目*/
 	.bili-header .right-entry__outside {
 		height: 36px;
 		display: flex;
 		justify-content: center;
 	}
-        .mini-header {
+   .mini-header {
     background: #0000;
     box-shadow: 0 2px 4px #0000;
 }
@@ -693,22 +623,20 @@ body{/*
 }
 .bili-user-profile,.bili-user-profile-view__avatar__face.bili-awesome-img{
     border-radius: 25px!important;
-	  overflow: hidden;
+    overflow: hidden;
 }
 }
 
 @-moz-document url-prefix("https://t.bilibili.com") {
 /*动态页中列上*/
-
 .bili-dyn-home--member main{
     margin-top: 12px;   
 }
-    
 .bili-dyn-publishing/*动态发布卡片背景1*/{
     border-radius:28px;
     background-color:rgba(0,0,0,0.5);
     backdrop-filter:blur(20px);
-	  z-index: 1;
+    z-index: 1;
 }
 .bili-rich-textarea__inner/*动态发布卡片背景2*/{
     border-radius:28px;
@@ -763,11 +691,9 @@ body{/*
 .bili-topic-selector__bulletin__clear/*已选择话题栏删除键X*/{
     background-color:rgba(71,71,71,1)
 }
-    
-    .bili-rich-textarea__inner{
-        color:#fff!important;
-    }
-    
+.bili-rich-textarea__inner{
+    color:#fff!important;
+}  
 .placeholder-shown[data-v-8f64a31e]::before/*动态文本编辑区预置文本*/{
     padding:0 0 0 14px;
     line-height:28px;
@@ -810,7 +736,7 @@ body{/*
 .bili-popover,.bili-popover__arrow/*emoji背景*/{
     background-color:rgba(51,51,51,1);
     border-radius:28px!important;
-	  border: none;
+    border: none;
 }
 .bili-emoji__content{
     background-color:rgb(0,0,0,0)
@@ -1254,7 +1180,7 @@ body{/*
 }
 .bb-comment .comment-send .dynamic-repost .dynamic-repost-checkbox/*评论区"同时转发到我的动态"前表单位置修复*/{
     margin-top:3px;
-    -webkit-appearance:checkbox;
+    --webkit-appearance:checkbox;
 }
 .bb-comment .comment-list .list-item .user .name/*评论区用户名字体*/{
     color:rgba(255,255,255,1)
@@ -1750,7 +1676,7 @@ body{/*
 }
 .bb-comment .comment-send .dynamic-repost .dynamic-repost-checkbox/*评论区"同时转发到我的动态"前表单位置修复*/{
     margin-top:3px;
-    -webkit-appearance:checkbox;
+    --webkit-appearance:checkbox;
 }
 .bb-comment .comment-list .list-item .user .name/*评论区用户名字体*/{
     color:rgba(255,255,255,1)
@@ -2300,40 +2226,14 @@ body{/*
 		scrollbar-color: hsl(0 0% 50% / .6) transparent;
 		scrollbar-width: thin !important;
 	}
-
+    /*[[CAPSULE_DESIGN]]*/
     
-	/**
-	 * 以下是调整暗色模式所覆盖的变量，当调整后上面css变量将被覆盖
-	 */
 	/*处理顶栏链接内容，使其在自定义背景下banner上方文字链接有阴影使其能看清文字*/
 		.bili-header :not(.slide-down) .right-entry {
 			backdrop-filter: var(--activity-filter-glass);
 			border-radius: 100px;
 			box-shadow: var(--activity-depth-1);
 		}
-		.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
-			text-shadow: 0 0 3px rgba(0, 0, 0, .3);
-		}
-		/*.bili-header .right-entry__outside svg,*/
-        .bili-header .bili-header__bar .right-entry__outside .right-entry-text,
-		.bili-header .right-entry .right-entry-item .right-entry-text {
-			filter: drop-shadow(0 0 3px rgba(0, 0, 0, .3));
-		}
-		/*.bili-header .right-entry__outside .right-entry-icon,
-        .bili-header .bili-header__bar .right-entry__outside .right-entry-text,
-		.bili-header .right-entry .right-entry-item .right-entry-text {
-			color: white!important;
-		}*/
-		.bili-header .slide-down .right-entry__outside .right-entry-icon,
-		.bili-header .slide-down .right-entry .right-entry-item .right-entry-text {
-			color: var(--activity-text-1)!important;
-		}
-    .elevator-core .name
-    {color: rgb(253,243,237)!important;text-shadow: 1px 1px 5px #000;}
-    .elevator-head
-    {color: #578bd3!important;box-shadow: 1px 1px 5px #00000050;}
-    .primary-btn.go-back
-    {display:none!important}
 
     :root {
 		--activity-bgimg: /*[[activity_DIV_BG]]*/;
