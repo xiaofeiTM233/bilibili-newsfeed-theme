@@ -11,48 +11,48 @@
 - Firefox 自己到商店安装
 - Edge 自己到商店安装
 
-2. [点击此处安装或更新](https://github.com/xiaofeiTM233/userstyles.world/raw/main/bilibili-activity-theme/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
+2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-activity-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
 
 ## 效果
 
 > 点击文字跳转图片源文件
 
-- [主页](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/1.png)
+- [主页](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/1.png)
 
-![主页](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/1.png)
+![主页](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/1.png?raw=true)
 
-- [投稿视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/2.png)
+- [投稿视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/2.png)
 
-![投稿视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/2.png)
+![投稿视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/2.png?raw=true)
 
-- [图文动态](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/3.png)
+- [图文动态](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/3.png)
 
-![图文动态](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/3.png)
+![图文动态](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/3.png?raw=true)
 
-- [专栏](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/4.png)
+- [专栏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/4.png)
 
-![专栏](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/4.png)
+![专栏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/4.png?raw=true)
 
-- [直播](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/5.png)
+- [直播](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/5.png)
 
-![直播](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/5.png)
+![直播](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/5.png?raw=true)
 
-- [转发视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/6.png)
+- [转发视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/6.png)
 
-![转发视频](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/6.png)
+![转发视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/6.png?raw=true)
 
-- [转发图文](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/7.png)
+- [转发图文](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/7.png)
 
-![转发图文](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/7.png)
+![转发图文](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/7.png?raw=true)
 
-- [含相关信息](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/8.png)
+- [含相关信息](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/8.png)
 
-![含相关信息](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/8.png)
+![含相关信息](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/8.png?raw=true)
 
 - 相关信息
 
-![相关游戏](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/9.png)
-![直播预约](https://userstyles-world-xiaofeitm233.vercel.app/bilibili-activity-theme/preview/10.png)
+![相关游戏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/9.png?raw=true)
+![直播预约](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/10.png?raw=true)
 
 ## 使用说明
 
