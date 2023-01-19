@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.4.1+20221225
+@version        2.4.2+20230114
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -687,6 +687,13 @@
 .bili-dyn-live-users__title span/*直播卡片直播间计数字体*/{
     color:rgba(205,205,205,0.6)
 }
+.bili-dyn-live-users__body/*直播卡片列表*/{
+    padding: 10px 16px 4px 16px;
+}
+.bili-dyn-live-users__item/*直播卡片直播间*/{
+    padding-top: 0px;
+    padding-bottom: 1em!important;
+}
 .bili-dyn-live-users__item__face-container/*直播卡片UP主头像*/{
     box-shadow:0px 5px 15px rgba(0,0,0,0.3);
 }
@@ -1046,7 +1053,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     background:rgba(255,255,255,0.1);
     border:0;
 }
-.bili-dyn-card-video__header/*视频封面*/{
+.bili-dyn-card-video__header,.dyn-ugc__cover/*视频封面*/{
     border-radius:14px
 }
 .bili-dyn-card-video,.bili-dyn-card-live.rcmd,.bili-dyn-card-pgc,.bili-dyn-card-live,.bili-dyn-card-medialist {
@@ -1127,15 +1134,15 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .dyn-vote__body:hover/*去除相关信息卡片阴影*/{
     box-shadow: 0 0 0 0 !important;
 }
-.dyn-reserve__card,.dyn-vote__body,.dyn-vote__cover,.dyn-additional-common__wrap,.dyn-additional-common__cover,.dyn-goods__wrap,.dyn-upower-lottery__card/*相关信息卡片背景*/{
+.dyn-reserve__card,.dyn-vote__body,.dyn-vote__cover,.dyn-additional-common__wrap,.dyn-additional-common__cover,.dyn-goods__wrap,.dyn-upower-lottery__card,.dyn-ugc__wrap/*相关信息卡片背景*/{
     background-color:rgba(255,255,255,0.1)!important;
     border-radius:14px;
     margin-right: 13px;
 }
-.dyn-reserve__title,.dyn-vote__detail__title,.dyn-additional-common__detail__title,.bili-dyn-card-common__title,.dyn-goods__mark span,.bili-dyn-card-music__title,.dyn-goods__one__detail__name.bili-ellipsis,.dyn-upower-lottery__title/*相关信息卡片标题*/{
+.dyn-reserve__title,.dyn-vote__detail__title,.dyn-additional-common__detail__title,.bili-dyn-card-common__title,.dyn-goods__mark span,.bili-dyn-card-music__title,.dyn-goods__one__detail__name.bili-ellipsis,.dyn-upower-lottery__title,.dyn-ugc__detail__title/*相关信息卡片标题*/{
     color:rgba(255,255,255,0.8);
 }
-.dyn-reserve__desc__first,.dyn-reserve__desc__second,.dyn-additional-common__detail__desc,.bili-dyn-card-common__desc,.bili-dyn-card-music__label,.dyn-goods__one__detail__brief, .dyn-goods__one__detail__price/*相关信息卡片副标题*/{
+.dyn-reserve__desc__first,.dyn-reserve__desc__second,.dyn-additional-common__detail__desc,.bili-dyn-card-common__desc,.bili-dyn-card-music__label,.dyn-goods__one__detail__brief, .dyn-goods__one__detail__price,.dyn-ugc__detail__desc/*相关信息卡片副标题*/{
     color:rgba(255,255,255,0.4);
 }
 .dyn-vote__cover/*投票图标*/{
