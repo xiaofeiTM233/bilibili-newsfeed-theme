@@ -7,9 +7,9 @@
 > 请先在浏览器安装 `Stylus` 插件，如步奏一
 
 1. 安装方式
-- Chrome [极简插件(荐)](https://chrome.zzzmh.cn/info/clngdbkpkpeebahjckkjfobafhncgmne), [谷歌商店(被墙)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
-- Firefox 自己到商店安装
-- Edge 自己到商店安装
+- Chrome&Edge [极简插件(荐)](https://chrome.zzzmh.cn/info/clngdbkpkpeebahjckkjfobafhncgmne), [谷歌商店(被墙)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+- Firefox [火狐商店](https://addons.mozilla.org/zh-CN/firefox/addon/styl-us)
+- 其他 [www.baidu.com/s?wd=stylus](https://www.baidu.com/s?wd=stylus)
 
 2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-activity-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
 
