@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           哔哩哔哩动态页主题（翻新）
 @namespace      bilibili-activity-theme
-@version        2.4.2+20230114
+@version        2.5.0+20230212
 @description    （翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author         飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL    https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -679,7 +679,7 @@
     background:rgba(0,0,0,0.5);
     backdrop-filter:blur(60px);
     margin-top:10px;
-    padding-bottom:4px;
+    padding-bottom:24px;
 }
 .bili-dyn-live-users__title/*直播卡片标题字体*/{
     color:rgba(205,205,205,0.8);
@@ -689,9 +689,10 @@
 }
 .bili-dyn-live-users__body/*直播卡片列表*/{
     padding: 10px 16px 4px 16px;
+    border-radius: 32px;
 }
 .bili-dyn-live-users__item/*直播卡片直播间*/{
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 1em!important;
 }
 .bili-dyn-live-users__item__face-container/*直播卡片UP主头像*/{
@@ -767,7 +768,7 @@
 .bili-topic-selector__bulletin/*已选择话题栏*/{
     background-color:rgba(51, 51, 51, 1);
     border-radius:14px;
-    padding:0px 10px;
+    padding:0 10px;
     width:calc(100% - 20px);
 }
 .bili-topic-selector__bulletin__clear/*已选择话题栏删除键X*/{
@@ -784,7 +785,7 @@
     width:calc(100% - 50px);
     min-height:28px;
     line-height:28px;
-    padding:0px 14px;
+    padding:0 14px;
     background-color:rgba(51,51,51,0.5);
     color:rgba(255,255,255,0.6);
     border-radius:14px;
@@ -855,7 +856,7 @@
     background-color:rgba(51,51,51,1);
     border:1px solid rgba(51,51,51,1);
     border-radius:14px;
-    padding:0px 0px 14px 0px;
+    padding:0 0 14px 0;
 }
 .bili-at-popup__hint/*"选择或输入你想@的人"字体样式*/{
     color:rgba(255,255,255,0.5)
@@ -1067,7 +1068,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     border-radius:14px;
     background:var(--activity-theme-color);
     backdrop-filter:blur(3px);
-    padding:0px 9px;
+    padding:0 9px;
 }
 .bili-dyn-card-video__title.bili-ellipsis,.bili-dyn-card-live__title.bili-ellipsis,.bili-dyn-card-pgc__title.bili-ellipsis/*视频、直播、番剧标题*/{
     color:rgba(255,255,255,0.8)
@@ -1274,13 +1275,13 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 }
 .bb-comment .comment-list .list-item .info .btn-hover/*评论的评论下的赞及更多样式*/{
     background:#00000000;
-    padding:0px 7px;
+    padding:0 7px;
     border-radius:7px;
     line-height:20px;
 }
 .bb-comment .comment-list .list-item .info .btn-hover:hover/*当光标在评论的评论下的赞及更多上时样式*/{
     background:rgba(255,255,255,0.1);
-    padding:0px 7px;
+    padding:0 7px;
     border-radius:7px;
     line-height:20px;
 }
@@ -1490,7 +1491,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 .userinfo-content .info .vip-label[data-v-c6080324]{/*视频信息卡片up头像二级菜单 大会员标志*/
     border-radius:7px;
     max-width:65px;
-    padding:0px 3.5px 0px 3.5px;
+    padding:0 3.5px 0 3.5px;
     line-height:18px;
 }
 .userinfo-content .btn-box >a.liked[data-v-c6080324]{/*视频信息卡片up头像二级菜单 “已关注”按钮调整*/
@@ -1511,7 +1512,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     border-radius:14px;
     background:rgba(251,114,153,0.7);
     backdrop-filter:blur(3px);
-    padding:0px 9px;
+    padding:0 9px;
 }
 .video-container .text-area .title[data-v-6b411d24]/*视频标题*/{
     color:rgba(255,255,255,0.8)
@@ -1562,7 +1563,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     border-radius:14px;
     background:rgba(251,114,153,0.7);
     backdrop-filter:blur(3px);
-    padding:0px 9px;
+    padding:0 9px;
 }
 .bangumi-container[data-v-4131c4fc]/*剧集信息卡片*/{
     border-radius:14px;
@@ -1615,7 +1616,7 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     border-radius:14px;
     background:rgba(251,114,153,0.7);
     backdrop-filter:blur(3px);
-    padding:0px 9px;
+    padding:0 9px;
 }
 .video-container .image-area img[data-v-3bada5c8]/*直播回放封面圆角*/{
     border-radius:14px;
@@ -1773,13 +1774,13 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
 }
 .bb-comment .comment-list .list-item .info .btn-hover/*评论的评论下的赞及更多样式*/{
     background:#00000000;
-    padding:0px 7px;
+    padding:0 7px;
     border-radius:7px;
     line-height:20px;
 }
 .bb-comment .comment-list .list-item .info .btn-hover:hover/*当光标在评论的评论下的赞及更多上时样式*/{
     background:rgba(255,255,255,0.1);
-    padding:0px 7px;
+    padding:0 7px;
     border-radius:7px;
     line-height:20px;
 }
@@ -1912,8 +1913,8 @@ div.bili-picker-input.bili-input.bili-input--suffix.small > input/*选择日期,
     border-radius:28px;
     background-color:rgba(0,0,0,0.5);
     backdrop-filter:blur(60px);
-    padding:7px 0px;
-    padding-bottom:0px;
+    padding:7px 0;
+    padding-bottom:0;
     
 }
 .bili-dyn-banner__img.clickable{
