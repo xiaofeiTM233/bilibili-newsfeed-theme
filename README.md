@@ -52,14 +52,16 @@
 - 相关信息
 
 ![相关游戏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/9.png?raw=true)
+
 ![直播预约](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/10.png?raw=true)
 
 ## 使用说明
 
 点击齿轮图标及可进行样式设置
 
-![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/11.png?raw=true)
 ![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/12.png?raw=true)
+
+![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/11.png?raw=true)
 
 ### 自定义背景
 
