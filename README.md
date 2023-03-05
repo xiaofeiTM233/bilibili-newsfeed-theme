@@ -58,9 +58,8 @@
 
 点击齿轮图标及可进行样式设置
 
-![设置](https://cdn.jsdelivr.net/gh/hakadao/bilibili-simple-home@master/preview/setting-preview.png)
-![设置](https://pic.afox.tk/2022/07/1656987984.png)
-![设置](https://pic.afox.tk/2022/07/1656988115.png)
+![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/11.png?raw=true)
+![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/12.png?raw=true)
 
 ### 自定义背景
 
@@ -78,8 +77,10 @@ url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg)
 ```
 
 ## 关于原作
-原样式：[https://userstyles.world/style/2677/bilibili](https://userstyles.world/style/2677/bilibili)
-原作者：noname <[https://userstyles.world/user/noname](https://userstyles.world/user/noname)> <[https://space.bilibili.com/164644572](https://space.bilibili.com/164644572)>
+
+- 原样式：[https://userstyles.world/style/2677/bilibili](https://userstyles.world/style/2677/bilibili)
+
+- 原作者：noname <[https://userstyles.world/user/noname](https://userstyles.world/user/noname)> <[https://space.bilibili.com/164644572](https://space.bilibili.com/164644572)>
 
 很抱歉没有在此翻新后的样式中加上原作者信息（忘了，现在加上了）
 
