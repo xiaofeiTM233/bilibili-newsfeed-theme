@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name		哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.6.0+20230305
+@version		2.6.1+20230305
 @description		（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author		飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL		https://github.com/xiaofeiTM233/bilibili-activity-theme
 @supportURL		https://club.afox.tk
 @updateURL		https://userstyles.world/api/style/5471.user.css
 @license		MIT
-@preprocessor	uso
+@preprocessor		uso
 
 \/*原样式：https://userstyles.world/style/2677/bilibili*\/
 \/*原作者：noname <https://userstyles.world/user/noname> <https://space.bilibili.com/164644572>*\/
@@ -171,6 +171,7 @@
 		.b-avatar__layers .b-avatar__layer.center{
 			display: block!important;
 		}
+		.bili-dyn-item__ornament,
 		.b-avatar__layer {
 			display: none!important;
 		}
@@ -1052,6 +1053,9 @@
 		background:rgba(0,0,0,0.5);
 		backdrop-filter:blur(60px);
 	}
+	.bili-dyn-up-list__item__face__img/*up主头像强制默认圆角大小*/{
+    	border-radius: 50%!important;
+	}
 	.bili-dyn-up-list__item__name.bili-ellipsis,
 	.bili-dyn-up-list__item__name/*最常浏览up主卡片字体颜色*/{
 		color:rgba(255,255,255,0.8);
@@ -1159,7 +1163,7 @@
 		background:rgba(255,255,255,0.1);
 		border:0;
 	}
-	.b-img/*直播、视频封面*/{
+	.b-img/*封面*/{
 		border-radius:14px;
 	}
 	.bili-dyn-card-video,
