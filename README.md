@@ -2,6 +2,16 @@
 
 发布在[此网站](https://userstyles.world)上的一个用于 `Stylus` 插件的CSS样式
 
+# 不再继续长期维护公告
+
+屑阿b又更新了页面，不仅难看的要死还导致css无法正常使用
+
+如果他沿用新版我就弃坑这个旧样式了
+
+新版本开荒：https://github.com/xiaofeiTM233/bilibili-new-activity-theme
+
+如需正常使用本样式请点击返回旧版！
+
 ## 安装
 
 > 请先在浏览器安装 `Stylus` 插件，如步奏一
