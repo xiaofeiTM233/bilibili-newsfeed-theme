@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name		哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.6.1+20230305
+@version		2.6.3+20230310
 @description		（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author		飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL		https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -31,7 +31,7 @@
 	T_THEME_COLOR_STYLE_HALF_1 "默认蓝 #00a1d6" <<<EOT
 		.bili-dyn-action:not(.disabled).active,
 		.bili-dyn-action:not(.disabled):hover {
-			color: rgb(0, 179, 255)
+			color: rgb(0, 179, 255);
 	}
 	EOT;
 	T_THEME_COLOR_STYLE_HALF_2 "默认粉 #fb7299" <<<EOT
@@ -236,17 +236,15 @@
 	}
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
-/* 动态页顶栏 */
-	/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
-		
-	/*导入logo字体*/
+/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
+/*动态页顶栏*/
 	@font-face {
+	/*导入logo字体*/
 		font-family: 'Bilibili Icon';
-		src: url('https://cdn.afox.tk/userstyles/fonts/Bilibili_Icon.ttf') format('truetype');
+		src: url('https://cdn.hitfun.top/userstyles/fonts/Bilibili_Icon.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
-
 	/*顶栏logo*/
 	.bili-header .left-entry__title::before {
 		content: "\0042";
@@ -639,8 +637,7 @@
 	.bili-header .bili-header__bar.slide-down + .bili-header__banner::after {
 		background-color: var(--activity-bgcolor);
 		filter: opacity(.6);
-	} 
-
+	}
 	/*去除礙眼物*/
 	/*顶栏左侧多余项目，保留首页按钮*/
 	.bili-header .left-entry li:not(:nth-child(1)),
@@ -648,6 +645,8 @@
 	.bili-header .right-entry li:nth-child(2),
 	/*热门搜寻*/
 	.search-panel .trending,
+	/*体验新版那个烦人的提示图*/
+	.bili-dyn-version-control__reminding,
 	/*广告*/
 	.bili-footer{
 		display: none!important;
@@ -1053,7 +1052,8 @@
 		background:rgba(0,0,0,0.5);
 		backdrop-filter:blur(60px);
 	}
-	.bili-dyn-up-list__item__face__img/*up主头像强制默认圆角大小*/{
+	.bili-dyn-up-list__item__face__img,
+	.b-img--face.sleepy:after/*up主头像强制默认圆角大小*/{
     	border-radius: 50%!important;
 	}
 	.bili-dyn-up-list__item__name.bili-ellipsis,
@@ -1084,7 +1084,8 @@
  @-moz-document url-prefix("https://t.bilibili.com") {
  /*动态页中列卡片*/
 	.bili-dyn-item,
-	.bili-dyn-list-loading/*卡片背景*/{
+	.bili-dyn-list-loading,
+	.bili-dyn-list-empty/*卡片背景*/{
 		border-radius:28px;
 		background:rgba(0,0,0,0.5);
 		backdrop-filter:blur(40px);
@@ -1143,7 +1144,8 @@
 	.dyn-additional-common__mark span,
 	.bili-dyn-more__menu__item,
 	.bili-dyn-card-medialist__title,
-	.dyn-goods__one__detail__name/*卡片字体1*/{
+	.dyn-goods__one__detail__name,
+	.bili-dyn-list-empty__text/*卡片字体1*/{
 		color:rgba(255,255,255,0.8);
 	}
 	.bili-rich-text-module.lottery:before {
@@ -1263,14 +1265,6 @@
 	.bili-dyn-card-common.style--1/*分享信息卡片背景*/{
 		background-color:rgba(255,255,255,0.1);
 	}
-	 /*反馈给客服了，不修了，让他们自己整，我也没办法修
-	 .dyn-additional-common__cover强制替换相关信息中不知道哪个sib前端修改的图片宽度{
-		 width:64px!important;
-	 }
-	.dyn-additional-common__cover .b-img picture img前端把图片宽度大小改乱了{
-		width: 128px!important;
-		height: 96px!important;
-	}*/
 	.dyn-vote__body:hover/*去除相关信息卡片阴影*/{
 		box-shadow: 0 0 0 0!important;
 	}
@@ -1281,7 +1275,8 @@
 	.dyn-additional-common__cover,
 	.dyn-goods__wrap,
 	.dyn-upower-lottery__card,
-	.dyn-ugc__wrap/*相关信息卡片背景*/{
+	.dyn-ugc__wrap,
+	.dyn-ugc__cover/*相关信息卡片背景*/{
 		background-color:rgba(255,255,255,0.1)!important;
 		border-radius:14px;
 		margin-right: 13px;
