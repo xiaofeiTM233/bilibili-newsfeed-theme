@@ -1,6 +1,8 @@
 # 哔哩哔哩动态页主题（翻新）
 
-发布在[此网站](https://userstyles.world)上的一个用于 `Stylus` 插件的CSS样式
+发布在[此网站](https://userstyles.world)上的一个用于 `Stylus` 插件的CSS样式。
+
+如有问题，欢迎提交Issues！
 
 # 新消息-可能要沿用旧动态页
 
@@ -31,7 +33,9 @@
 
 ## 效果
 
-> 点击文字跳转图片源文件
+<details>
+
+<summary>点击文字跳转图片源文件</summary>
 
 - [主页](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/1.png)
 
@@ -71,9 +75,13 @@
 
 ![直播预约](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/10.png?raw=true)
 
+</details>
+
 ## 使用说明
 
-点击齿轮图标及可进行样式设置
+<details>
+
+<summary>点击齿轮图标及可进行样式设置</summary>
 
 ![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/12.png?raw=true)
 
@@ -93,6 +101,8 @@
 /* 自定义背景格式 */
 url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg)
 ```
+
+</details>
 
 ## 关于原作
 
