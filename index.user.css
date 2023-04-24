@@ -1,14 +1,14 @@
 /* ==UserStyle==
-@name		哔哩哔哩动态页主题（翻新）
+@name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.6.3+20230310
-@description		（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
-@author		飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
-@homepageURL		https://github.com/xiaofeiTM233/bilibili-activity-theme
+@version		2.7.0+20230424
+@description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
+@author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
+@homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
 @supportURL		https://club.afox.tk
 @updateURL		https://userstyles.world/api/style/5471.user.css
 @license		MIT
-@preprocessor		uso
+@preprocessor	uso
 
 \/*原样式：https://userstyles.world/style/2677/bilibili*\/
 \/*原作者：noname <https://userstyles.world/user/noname> <https://space.bilibili.com/164644572>*\/
@@ -44,7 +44,11 @@
 		.bili-dyn-action:not(.disabled):hover,
 		.bili-comment-option__item.active,
 		.bili-dyn-live-users__more:hover,
-		.bili-dyn-item__panel > div.dynamic-card-comment > div > div.comment-header.clearfix > div.tabs-order > ul > li.on {
+		.bili-dyn-item__panel > div.dynamic-card-comment > div > div.comment-header.clearfix > div.tabs-order > ul > li.on,
+		.bb-comment .comment-list .list-item .user .name:hover, .comment-bilibili-fold .comment-list .list-item .user .name:hover,
+		.bb-comment .comment-header .tabs-order li.on, .comment-bilibili-fold .comment-header .tabs-order li.on,
+		.bb-comment .comment-header .tabs-order li:hover, .comment-bilibili-fold .comment-header .tabs-order li:hover,
+		.is-web .joined-number[data-v-cab5ccf4]{
 			color: #fb7299;
 		}
 		.bili-dyn-action.like:hover i {
@@ -91,6 +95,9 @@
 		.paging-box-big .dian:hover {
 			background: #fb7299!important;
 			border: 1px solid #fb7299!important;
+		}
+		.is-web .submit-button[data-v-279f52e9]{
+			background: #fb7299;
 		}
 	EOT;
 }
@@ -236,8 +243,8 @@
 	}
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
-/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 /*动态页顶栏*/
+	/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 	@font-face {
 	/*导入logo字体*/
 		font-family: 'Bilibili Icon';
@@ -1397,7 +1404,6 @@
 		background-color:rgba(255,255,255,0.3);
 	}
 	.bili-avatar/*评论区自己头像位置及样式*/{
-		margin-top:8px;
 		box-shadow:0 0 25px rgba(51, 51, 51, .5);
 	}
 	.comment-submit/*发布评论按钮样式*/{
@@ -1904,8 +1910,8 @@
 	}
 }
 
-@-moz-document url-prefix("https://sb.bilibili.com") {
-/*@!$抽奖二级菜单*/
+@-moz-document url-prefix("https://t.bilibili.com") {
+/*抽奖投票二级菜单*/
 	.backdrop .extension-wrapper[data-v-21fef14f]/*背景*/{
 		border-radius:14px;
 		z-index:10086;
@@ -1922,7 +1928,7 @@
 		background-color:rgb(51,51,51);
 	}
 	#bp-app/*外框*/{
-		background-color:rgba(51,51,51,1)!important;
+		background-color:rgba(51, 51, 51,.9)!important;
 	}
 	.result.is-web[data-v-9728ec12]/*主体背景1*/{
 		background-color:rgba(51,51,51,1);
@@ -1973,22 +1979,21 @@
 	.prize-item .prize-desc[data-v-2df93ba1]/*奖品详情*/{
 		color:rgba(255,255,255,0.3);
 	}
-}
-
-@-moz-document url-prefix("https://sb.bilibili.com") {
-/*@!$#投票二级菜单*/
-	.vote-title[data-v-cab5ccf4]{/*投票二级菜单 标题字体色*/
+	.left-column .vote-title{/*投票二级菜单 标题字体色*/
 		color:rgba(255,255,255,0.8);
 	}
-	.row[data-v-31501526]{/*投票二级菜单 投票结果背景色*/
+	.group .row{/*投票二级菜单 投票结果背景色*/
 		border:0;
 		background:rgba(255,255,255,0.1)!important;
 	}
-	.vote-user-name[data-v-cab5ccf4]{/*投票二级菜单 发起人字体色*/
+	.vote-creator .vote-user-name{/*投票二级菜单 发起人字体色*/
 		color:rgba(255,255,255,0.6);
 	}
-	.vote-user-text[data-v-cab5ccf4],
-	.vote-left-time[data-v-cab5ccf4]{/*投票二级菜单 发起、剩余时间字体色*/
+	.vote-creator .vote-user-text,
+	.vote-creator .vote-left-time,
+	.vote-info-wrapper .vote-introduction,
+	.joined-text[data-v-cab5ccf4],
+	.share-to-dynamic[data-v-9122deaa], .anonymous[data-v-9122deaa]{/*投票二级菜单 文字色*/
 		color:rgba(255,255,255,0.4);
 	}
 	.desc-title[data-v-9122deaa]{/*投票二级菜单 投票选项字体色*/
@@ -2014,6 +2019,7 @@
 	.is-web .vote-result-comment{/*投票二级菜单 评论区背景色*/
 		background-color:rgb(31,31,31)!important;
 		border-radius:14px;
+		padding:0;
 	}
 }
 
@@ -2033,8 +2039,8 @@
 }
 
  @-moz-document url-prefix("https://t.bilibili.com") {
-/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 /*板块以及文字颜色调整*/
+	 /*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 	.up:hover,
 	.international-footer a:hover,
 	.international-footer .partner a:hover,
@@ -2172,8 +2178,8 @@
 }
 
 @-moz-document url-prefix("https://t.bilibili.com") {
-/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 /*样式颜色、阴影、滤镜等变量，和自定义选项作出的修改*/
+	/*改自hakadao的https://userstyles.world/style/3022/bilibili*/
 	:root {
 		--activity-bgcolor: hsl(220, 14%, 96%);
 
