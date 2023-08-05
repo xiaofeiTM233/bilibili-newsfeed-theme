@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.7.1+20230511
+@version		2.7.5+20230805
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -45,10 +45,26 @@
 		.bili-comment-option__item.active,
 		.bili-dyn-live-users__more:hover,
 		.bili-dyn-item__panel > div.dynamic-card-comment > div > div.comment-header.clearfix > div.tabs-order > ul > li.on,
-		.bb-comment .comment-list .list-item .user .name:hover, .comment-bilibili-fold .comment-list .list-item .user .name:hover,
-		.bb-comment .comment-header .tabs-order li.on, .comment-bilibili-fold .comment-header .tabs-order li.on,
-		.bb-comment .comment-header .tabs-order li:hover, .comment-bilibili-fold .comment-header .tabs-order li:hover,
-		.is-web .joined-number[data-v-cab5ccf4]{
+		.bb-comment .comment-list .list-item .user .name:hover,
+		.bili-dyn-forward-item__uname .default:hover,
+		.comment-bilibili-fold .comment-list .list-item .user .name:hover,
+		.bb-comment .comment-header .tabs-order li.on,
+		.comment-bilibili-fold .comment-header .tabs-order li.on,
+		.bb-comment .comment-header .tabs-order li:hover,
+		.comment-bilibili-fold .comment-header .tabs-order li:hover,
+		.is-web .joined-number[data-v-cab5ccf4],
+		.bb-comment .comment-list .list-item .text .vote-link:hover,
+		.comment-bilibili-fold .comment-list .list-item .text .vote-link:hover,
+		.bb-comment .comment-list .list-item .text-con .vote-link:hover,
+		.comment-bilibili-fold .comment-list .list-item .text-con .vote-link:hover,
+		.bb-comment .comment-list .list-item .text .lottery-link:hover,
+		.comment-bilibili-fold .comment-list .list-item .text .lottery-link:hover,
+		.bb-comment .comment-list .list-item .text-con .lottery-link:hover,
+		.comment-bilibili-fold .comment-list .list-item .text-con .lottery-link:hover,
+		.bb-comment .comment-list .list-item .text .comment-jump-url:hover,
+		.comment-bilibili-fold .comment-list .list-item .text .comment-jump-url:hover,
+		.bb-comment .comment-list .list-item .text-con .comment-jump-url:hover,
+		.comment-bilibili-fold .comment-list .list-item .text-con .comment-jump-url:hover{
 			color: #fb7299;
 		}
 		.bili-dyn-action.like:hover i {
@@ -1064,23 +1080,33 @@
 	.bili-dyn-up-list__item__name/*最常浏览up主卡片字体颜色*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
-	.bili-dyn-up-list__item.active .bili-dyn-up-list__item__name/*浏览中up主名称字体颜色*/{
-		color: var(--activity-theme-default);
-	}
 	.bili-dyn-up-list__item__face__img.bili-awesome-img/*最常浏览up主卡片头像样式*/{
 		border: 0;
 		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 		border-radius: 18px;
+	}
+	/*浏览中up主名称字体颜色*/
+	.bili-dyn-up-list__item.active .bili-dyn-up-list__item__name,
+	/*浏览中动态视频分类字体颜色*/
+	.bili-dyn-list-tabs__item.active,
+	.bili-dyn-list-tabs__item:hover,
+	/*动态视频分类下划线颜色*/
+	.bili-dyn-list-tabs__highlight{
+		color: var(--activity-theme-default);
 	}
 	.bili-dyn-list-tabs/*动态视频分类*/{
 		border-radius: 28px;
 		background: rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(60px);
 	}
+	.bili-dyn-list-tabs__item/*动态视频分类字体颜色*/{
+		color: #99a2aa;
+	}
 	.bili-dyn-list__notification/*有新动态卡片样式*/{
 		background: rgba(252, 249, 215, 0.5);
 		backdrop-filter: blur(50px);
 		border-radius: 28px;
+		font-weight: bold;
 		text-shadow: 0px 0px 20px rgba(151, 120, 42, 1);
 	}
 }
@@ -1171,6 +1197,7 @@
 	}
 	.b-img/*封面*/{
 		border-radius: 14px;
+		background: none!important;
 	}
 	.bili-dyn-card-video,
 	.bili-dyn-card-live.rcmd,
@@ -1284,7 +1311,8 @@
 	.dyn-goods__wrap,
 	.dyn-upower-lottery__card,
 	.dyn-ugc__wrap,
-	.dyn-ugc__cover/*相关信息卡片背景*/{
+	.dyn-ugc__cover,
+	.dyn-tip /*相关信息卡片背景*/{
 		background-color: rgba(255, 255, 255, 0.1)!important;
 		border-radius: 14px;
 		margin-right: 13px;
@@ -1336,6 +1364,9 @@
 		border: 0;
 		background-color: var(--activity-theme-color-85);
 		color: #fff
+	}
+	.dyn-additional-common__detail/*相关信息卡片文字部分宽度*/{
+		width: 430px;
 	}
 	.details/*动态分享详情*/{
 		opacity: inherit;
@@ -1436,7 +1467,8 @@
 	.bb-comment .medal .true-love/*评论区粉丝牌*/{
 		color: rgba(255, 255, 255, 1)!important;
 	}
-	.bb-comment .comment-list .list-item .user .name/*评论区用户名字体*/{
+	.bb-comment .comment-list .list-item .user .name,/*转发用户名字体*/
+	.bili-dyn-forward-item__uname/*评论区用户名字体*/{
 		color: rgba(255, 255, 255, 1);
 	}
 	.bb-comment .comment-list .list-item .text/*评论区评论字体*/{
@@ -1471,6 +1503,18 @@
 	.paging-box .tcd-number:hover,
 	.paging-box .dian:hover,
 	.paging-box span.current,/*翻页按钮*/
+	.bb-comment .comment-list .list-item .text .vote-link,
+	.comment-bilibili-fold .comment-list .list-item .text .vote-link,
+	.bb-comment .comment-list .list-item .text-con .vote-link,
+	.comment-bilibili-fold .comment-list .list-item .text-con .vote-link,
+	.bb-comment .comment-list .list-item .text .lottery-link,
+	.comment-bilibili-fold .comment-list .list-item .text .lottery-link,
+	.bb-comment .comment-list .list-item .text-con .lottery-link,
+	.comment-bilibili-fold .comment-list .list-item .text-con .lottery-link,
+	.bb-comment .comment-list .list-item .text .comment-jump-url,
+	.comment-bilibili-fold .comment-list .list-item .text .comment-jump-url,
+	.bb-comment .comment-list .list-item .text-con .comment-jump-url,
+	.comment-bilibili-fold .comment-list .list-item .text-con .comment-jump-url,/*评论中的链接*/
 	.bb-comment .bottom-page.center a:hover,/*评论下的回复按钮颜色*/
 	.bb-comment .comment-list .list-item .info .btn-hover:hover/*评论的评论下的更多按钮颜色*/{
 		color: var(--activity-theme-default);
@@ -1549,7 +1593,6 @@
 		border: 0;
 		background-color: rgba(255, 255, 255, 0.2);
 		border-radius: 14px;
-		;
 		padding: 14px;
 		margin-right: 14px;
 		margin-bottom: 14px;
