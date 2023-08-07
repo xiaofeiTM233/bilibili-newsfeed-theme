@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.7.5+20230805
+@version		2.7.5+20230807
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -263,7 +263,7 @@
 	@font-face {
 		/*导入logo字体*/
 		font-family: 'Bilibili Icon';
-		src: url('https://cdn.hitfun.top/userstyles/fonts/Bilibili_Icon.ttf') format('truetype');
+		src: url('https://patchwiki.biligame.com/images/gt/4/47/q4qr5ai4ckncd7890wil4kxuageskca.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
