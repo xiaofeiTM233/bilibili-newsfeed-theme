@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.7.5+20230807
+@version		2.8.0+20230808
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -550,6 +550,10 @@
 		display: flex;
 		justify-content: center;
 	}
+	/*大会员过期了那还是把大会员图标移除吧*/
+	.bili-header .vip-wrap {
+		display: none;
+	}
 	/*投稿图标不变色*/
 	.bili-header .slide-down [class$="entry"] span:not(nth-last-child),
 	.bili-header .slide-down [class$="entry"] svg {
@@ -733,8 +737,6 @@
 		border-radius: 28px;
 		background: rgba(0, 0, 0, 0.5);
 		backdrop-filter: blur(60px);
-		margin-top: 10px;
-		padding-bottom: 24px;
 	}
 	.bili-dyn-live-users__title/*直播卡片标题字体*/{
 		color: rgba(205, 205, 205, 0.8);
@@ -743,12 +745,10 @@
 		color: rgba(205, 205, 205, 0.6);
 	}
 	.bili-dyn-live-users__body/*直播卡片列表*/{
-		padding: 10px 16px 4px 16px;
 		border-radius: 32px;
 	}
-	.bili-dyn-live-users__item/*直播卡片直播间*/{
-		padding-top: 0;
-		padding-bottom: 1em!important;
+	.bili-dyn-live-users__item/*直播卡片*/{
+		padding: 3px 0 7px 0;
 	}
 	.bili-dyn-live-users__item__face-container/*直播卡片UP主头像*/{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
@@ -1795,8 +1795,60 @@
 		width: 100%;
 		margin-left: 4.5%;
 	}
-	.bb-comment .fold-comment:hover {
+	.bb-comment .fold-comment:hover,
+	.be-live-list-header .be-live-list-refresh:hover,
+	.be-live-list-header .be-live-list-more:hover,
+	.be-live-list-header .be-live-list-more:hover .be-iconfont-right-arrow,
+	.be-live-list-content .be-live-list-item:hover .be-live-list-item-title,
+	.be-live-list-content .be-live-list-item-user:hover{
 		color: var(--activity-theme-default);
+	}
+	.be-live-list/*直播列表卡片*/{
+		border-radius: 28px;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(60px);
+		margin-top: 10px;
+		padding-bottom: 24px;
+	}
+	.be-icon/*直播卡片图标颜色*/{
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.be-live-list-header .be-live-list-title/*直播卡片标题颜色*/{
+		color: rgba(205, 205, 205, 0.8);
+	}
+	.be-live-list-header .be-live-list-count/*直播卡片直播间计数颜色*/{
+		color: rgba(205, 205, 205, 0.6);
+		opacity: inherit;
+	}
+	.be-live-list-header .be-live-list-refresh,
+	.be-live-list-header .be-live-list-more/*直播卡片直播间更多&刷新颜色*/{
+		color: rgba(205, 205, 205, 0.7);
+	}
+	.be-live-list-search .be-textbox[data-v-242237dc]/*搜索框整体样式*/{
+		border: 0;
+		border-radius: 7px;
+	}
+	.be-live-list-search .be-textbox input[type=text][data-v-242237dc]/*搜索框样式*/{
+		border: 0;
+		border-radius: 7px;
+		background-color: rgba(255, 255, 255, 0.1);
+		transition: 0.2s;
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.be-live-list-search .be-textbox input[type=text][data-v-242237dc]:hover/*鼠标在搜索框上时的样式*/{
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	.be-live-list-content .be-empty/*搜索结果样式*/{
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.be-live-list-content .be-live-list-item-avatar/*直播卡片UP主头像*/{
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}
+	.be-live-list-content .be-live-list-item-title/*直播UP主标题*/{
+		color: rgba(255, 255, 255, .4);
+	}
+	.be-live-list-content .be-live-list-item-user/*直播UP主昵称*/{
+		color: rgba(255, 255, 255, 0.6);
 	}
 }
 
