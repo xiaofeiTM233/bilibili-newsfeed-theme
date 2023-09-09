@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.8.0+20230809
+@version		2.8.3+20230909
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
@@ -1189,8 +1189,9 @@
 	.bili-dyn-card-live__body,
 	.bili-dyn-card-pgc__body,
 	.bili-dyn-card-medialist__body,
+	.bili-dyn-card-courses__body,
 	.bili-dyn-card-music,
-	.dyn-reserve__card.cover-style/*视频、直播、番剧、收藏卡片信息区*/{
+	.dyn-reserve__card.cover-style/*视频、直播、番剧、收藏、课堂卡片信息区*/{
 		border-radius: 14px;
 		background: rgba(255, 255, 255, 0.1);
 		border: 0;
@@ -1203,6 +1204,7 @@
 	.bili-dyn-card-live.rcmd,
 	.bili-dyn-card-pgc,
 	.bili-dyn-card-live,
+	.bili-dyn-card-courses,
 	.bili-dyn-card-medialist {
 		border: 0px;
 	}
@@ -1213,8 +1215,9 @@
 	.bili-dyn-card-video__badge,
 	.bili-dyn-card-live__tag,
 	.bili-dyn-card-pgc__tag,
+	.bili-dyn-card-courses__badge,
 	.bili-dyn-title__label,
-	.bili-dyn-card-medialist__badge/*投稿视频、直播、番剧小胶囊*/{
+	.bili-dyn-card-medialist__badge/*投稿视频、直播、番剧、课堂小胶囊*/{
 		border-radius: 14px;
 		background: var(--activity-theme-color);
 		backdrop-filter: blur(3px);
@@ -1224,12 +1227,15 @@
 	.bili-dyn-card-video__title.bili-ellipsis,
 	.bili-dyn-card-live__title.bili-ellipsis,
 	.bili-dyn-card-pgc__title.bili-ellipsis,
-	.dyn-card-opus__title/*视频、直播、番剧、专栏标题*/{
+	.bili-dyn-card-courses__title.bili-ellipsis,
+	.dyn-card-opus__title/*视频、直播、番剧、专栏、课堂标题*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
 	.bili-dyn-card-video__desc.bili-ellipsis,
-	.bili-dyn-card-live__desc,
-	.bili-dyn-card-pgc__stat/*视频、直播简介*/{
+	.bili-dyn-card-live__desc.bili-ellipsis,
+	.bili-dyn-card-courses__sub-title.bili-ellipsis,
+	.bili-dyn-card-courses__desc.bili-ellipsis,
+	.bili-dyn-card-pgc__stat/*视频、直播、课堂简介*/{
 		color: rgba(255, 255, 255, 0.45);
 	}
 	.bili-dyn-card-video__stat__item.play,
@@ -1308,6 +1314,7 @@
 	.dyn-vote__cover,
 	.dyn-additional-common__wrap,
 	.dyn-additional-common__cover,
+	.dyn-match__wrap,
 	.dyn-goods__wrap,
 	.dyn-upower-lottery__card,
 	.dyn-ugc__wrap,
@@ -1321,11 +1328,13 @@
 	.dyn-vote__detail__title,
 	.dyn-additional-common__detail__title,
 	.bili-dyn-card-common__title,
+	.dyn-match__mark span,
 	.dyn-goods__mark span,
 	.bili-dyn-card-music__title,
 	.dyn-goods__one__detail__name.bili-ellipsis,
 	.dyn-upower-lottery__title,
-	.dyn-ugc__detail__title/*相关信息卡片标题*/{
+	.dyn-ugc__detail__title,
+	.dyn-match__title/*相关信息卡片标题*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
 	.dyn-reserve__desc__first,
@@ -1335,7 +1344,10 @@
 	.bili-dyn-card-music__label,
 	.dyn-goods__one__detail__brief,
 	.dyn-goods__one__detail__price,
-	.dyn-ugc__detail__desc/*相关信息卡片副标题*/{
+	.dyn-ugc__detail__desc,
+	.dyn-match__team__name,
+	.dyn-match__center__bottom,
+	.dyn-match__center__top/*相关信息卡片副标题*/{
 		color: rgba(255, 255, 255, 0.4);
 	}
 	.dyn-vote__cover/*投票图标*/{
@@ -1366,7 +1378,7 @@
 		color: #fff
 	}
 	.dyn-additional-common__detail/*相关信息卡片文字部分宽度*/{
-		width: 430px;
+		width: 100px;
 	}
 	.details/*动态分享详情*/{
 		opacity: inherit;
@@ -1838,7 +1850,8 @@
 	.be-live-list-search .be-textbox input[type=text][data-v-242237dc]:hover/*鼠标在搜索框上时的样式*/{
 		background-color: rgba(255, 255, 255, 0.3);
 	}
-	.be-live-list-content .be-empty/*搜索结果样式*/{
+	.be-live-list-content .be-empty,
+	.be-live-list-content .be-loading/*结果样式*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
 	.be-live-list-content .be-live-list-item-avatar/*直播卡片UP主头像*/{
