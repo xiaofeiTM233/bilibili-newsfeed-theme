@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-activity-theme
-@version		2.8.3+20230909
+@version		2.8.4+20230925
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
-@author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk)
+@author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk) [https://space.bilibili.com/646195980]
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
-@supportURL		https://club.afox.tk
+@supportURL		https://github.com/xiaofeiTM233/bilibili-activity-theme/issues
 @updateURL		https://userstyles.world/api/style/5471.user.css
 @license		MIT
 @preprocessor	uso
@@ -1228,14 +1228,16 @@
 	.bili-dyn-card-live__title.bili-ellipsis,
 	.bili-dyn-card-pgc__title.bili-ellipsis,
 	.bili-dyn-card-courses__title.bili-ellipsis,
-	.dyn-card-opus__title/*视频、直播、番剧、专栏、课堂标题*/{
+	.dyn-card-opus__title,
+	.dyn-blocked-mask.feed-item .dyn-blocked-mask__msg-title/*视频、直播、番剧、专栏、课堂、订阅动态标题*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
 	.bili-dyn-card-video__desc.bili-ellipsis,
 	.bili-dyn-card-live__desc.bili-ellipsis,
 	.bili-dyn-card-courses__sub-title.bili-ellipsis,
 	.bili-dyn-card-courses__desc.bili-ellipsis,
-	.bili-dyn-card-pgc__stat/*视频、直播、课堂简介*/{
+	.bili-dyn-card-pgc__stat,
+	.dyn-blocked-mask.feed-item .dyn-blocked-mask__msg-desc/*视频、直播、课堂、订阅动态简介*/{
 		color: rgba(255, 255, 255, 0.45);
 	}
 	.bili-dyn-card-video__stat__item.play,
@@ -1371,7 +1373,8 @@
 	.dyn-orig-author__following,
 	.dyn-vote__action button,
 	.dyn-goods__one__action button,
-	.dyn-upower-lottery__action button/*相关信息卡片相关按钮*/{
+	.dyn-upower-lottery__action button,
+	.dyn-blocked-mask.feed-item .dyn-blocked-mask__btn/*相关信息卡片相关按钮*/{
 		border-radius: 7px;
 		border: 0;
 		background-color: var(--activity-theme-color-85);
