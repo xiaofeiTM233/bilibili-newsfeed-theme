@@ -4,7 +4,7 @@
 
 如有问题，欢迎提交Issues！
 
-~~新版本开荒：https://github.com/xiaofeiTM233/bilibili-new-activity-theme~~
+~~新版本开荒：https://github.com/xiaofeiTM233/bilibili-new-newsfeed-theme~~
 
 如需正常使用本样式请点击返回旧版！
 
@@ -19,7 +19,7 @@
 - Firefox [火狐商店](https://addons.mozilla.org/zh-CN/firefox/addon/styl-us)
 - 其他 [www.baidu.com/s?wd=stylus](https://www.baidu.com/s?wd=stylus)
 
-2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-activity-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
+2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
 
 ## 效果
 
@@ -27,43 +27,43 @@
 
 <summary>点击文字跳转图片源文件</summary>
 
-- [主页](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/1.png)
+- [主页](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/1.png)
 
-![主页](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/1.png?raw=true)
+![主页](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/1.png?raw=true)
 
-- [投稿视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/2.png)
+- [投稿视频](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/2.png)
 
-![投稿视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/2.png?raw=true)
+![投稿视频](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/2.png?raw=true)
 
-- [图文动态](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/3.png)
+- [图文动态](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/3.png)
 
-![图文动态](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/3.png?raw=true)
+![图文动态](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/3.png?raw=true)
 
-- [专栏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/4.png)
+- [专栏](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/4.png)
 
-![专栏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/4.png?raw=true)
+![专栏](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/4.png?raw=true)
 
-- [直播](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/5.png)
+- [直播](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/5.png)
 
-![直播](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/5.png?raw=true)
+![直播](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/5.png?raw=true)
 
-- [转发视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/6.png)
+- [转发视频](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/6.png)
 
-![转发视频](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/6.png?raw=true)
+![转发视频](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/6.png?raw=true)
 
-- [转发图文](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/7.png)
+- [转发图文](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/7.png)
 
-![转发图文](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/7.png?raw=true)
+![转发图文](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/7.png?raw=true)
 
-- [含相关信息](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/8.png)
+- [含相关信息](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/8.png)
 
-![含相关信息](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/8.png?raw=true)
+![含相关信息](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/8.png?raw=true)
 
 - 相关信息
 
-![相关游戏](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/9.png?raw=true)
+![相关游戏](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/9.png?raw=true)
 
-![直播预约](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/10.png?raw=true)
+![直播预约](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/10.png?raw=true)
 
 </details>
 
@@ -73,9 +73,9 @@
 
 <summary>点击齿轮图标及可进行样式设置</summary>
 
-![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/12.png?raw=true)
+![设置](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/12.png?raw=true)
 
-![设置](https://github.com/xiaofeiTM233/bilibili-activity-theme/blob/main/preview/11.png?raw=true)
+![设置](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/blob/main/preview/11.png?raw=true)
 
 ### 自定义背景
 
@@ -98,7 +98,7 @@ url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg)
 
 - 原样式：[https://userstyles.world/style/2677/bilibili](https://userstyles.world/style/2677/bilibili)
 
-- 原作者：noname <[https://userstyles.world/user/noname](https://userstyles.world/user/noname)> <[https://space.bilibili.com/164644572](https://space.bilibili.com/164644572)>
+- 原作者：noname <[https://userstyles.world/user/noname](https://userstyles.world/user/noname)>
 
 很抱歉没有在此翻新后的样式中加上原作者信息（忘了，现在加上了）
 
@@ -106,4 +106,4 @@ url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg)
 
 当时翻新的时候确实留下了一堆东西没有加上，但经过几次假期现已经基本完善了，跟原作者的差不多，并且加入了一些新的功能awa
 
-很高兴得到原作者的欣赏，我也会继续维护这个样式的
+很高兴得到原作者的认可，我也会继续维护这个样式的
