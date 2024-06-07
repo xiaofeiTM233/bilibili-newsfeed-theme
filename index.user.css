@@ -1,17 +1,17 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
-@namespace		bilibili-activity-theme
-@version		2.8.4+20230925
+@namespace		bilibili-newsfeed-theme
+@version		2.10.0+20240607
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
-@author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://afox.tk) [https://space.bilibili.com/646195980]
-@homepageURL	https://github.com/xiaofeiTM233/bilibili-activity-theme
-@supportURL		https://github.com/xiaofeiTM233/bilibili-activity-theme/issues
+@author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://hitfun.top) [https://space.bilibili.com/646195980]
+@homepageURL	https://github.com/xiaofeiTM233/bilibili-newsfeed-theme
+@supportURL		https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/issues
 @updateURL		https://userstyles.world/api/style/5471.user.css
 @license		MIT
 @preprocessor	uso
 
 \/*原样式：https://userstyles.world/style/2677/bilibili*\/
-\/*原作者：noname <https://userstyles.world/user/noname> <https://space.bilibili.com/164644572>*\/
+\/*原作者：noname <https://userstyles.world/user/noname>*\/
 
 @advanced color T_THEME_COLOR_NEW "选择主题色（十六进制非透明颜色，如默认蓝 #00a1d6、默认粉 #fb7299）" #00a1d6
 
@@ -22,7 +22,7 @@
 	BG_4 "2020拜年祭活动 " <<<EOT url(https://i.loli.net/2020/05/25/HxnieocyPIjWvQB.jpg) EOT;
 	BG_5 "2020BDF" <<<EOT url(https://pic.imgdb.cn/item/63830f1816f2c2beb1868554.jpg) EOT;
 	BG_NONE "无背景" <<<EOT "" EOT;
-	BG_DIV "自定义" <<<EOT var(--activity-bg-custom) EOT;
+	BG_DIV "自定义" <<<EOT var(--newsfeed-bg-custom) EOT;
 }
 
 @advanced text T_CUSTOM_BG "自定义背景" "url()"
@@ -31,7 +31,7 @@
 	T_THEME_COLOR_STYLE_HALF_1 "默认蓝 #00a1d6" <<<EOT
 		.bili-dyn-action:not(.disabled).active,
 		.bili-dyn-action:not(.disabled):hover {
-			color: var(--activity-theme-default);
+			color: var(--newsfeed-theme-default);
 	}
 	EOT;
 	T_THEME_COLOR_STYLE_HALF_2 "默认粉 #fb7299" <<<EOT
@@ -136,15 +136,15 @@
 		CAPSULE_DESIGN_1 "默认设计" <<<EOT
 		.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
 		.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
-			color: var(--activity-text-1);
+			color: var(--newsfeed-text-1);
 		}
 	EOT;
 
 	CAPSULE_DESIGN_2 "跟随主题色" <<<EOT
 		.bili-header .bili-header__bar .right-entry__outside .right-entry-icon,
 		.bili-header .bili-header__bar .right-entry__outside .right-entry-text {
-			color: var(--activity-theme-color);
-			filter: drop-shadow(0 0 8px var(--activity-theme-color));
+			color: var(--newsfeed-theme-color);
+			filter: drop-shadow(0 0 8px var(--newsfeed-theme-color));
 		}
 	EOT;
 
@@ -201,6 +201,19 @@
 	EOT;
 }
 
+@advanced dropdown FW_SHARE "隐藏除第一个外的分享内容" {
+	OFF "关闭" <<<EOT
+	EOT;
+	ON "开启" <<<EOT
+		.bili-dyn-forward__list > .bili-dyn-forward__item:nth-child(1) {
+			display: block!important;
+		}
+		.bili-dyn-forward__list > .bili-dyn-forward__item {
+			display: none!important;
+		}
+	EOT;
+}
+
 @advanced dropdown L_BLUR "减少毛玻璃效果提升性能" {
 	OFF "关闭" <<<EOT
 		EOT;
@@ -249,7 +262,7 @@
 	html body,
 	html:not(.iframe),
 	html:not(.iframe) body {
-		background: var(--activity-bgimg) no-repeat fixed 50% 0;
+		background: var(--newsfeed-bgimg) no-repeat fixed 50% 0;
 		background-size: cover;
 		transform: none;
 	}
@@ -291,12 +304,12 @@
 	.bili-header [class^="red-num--"],
 	/*顶栏弹窗，未读信息*/
 	.bili-header .message-entry-popover [class$="--num"] {
-		background-color: var(--activity-theme-color)
+		background-color: var(--newsfeed-theme-color)
 	}
 	/*搜索栏*/
 	/*搜索栏输入框文字清除图标*/
 	.bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-clean svg * {
-		fill: var(--activity-text-3)
+		fill: var(--newsfeed-text-3)
 	}
 	.bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input:focus,
 	.bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input:active,
@@ -321,25 +334,25 @@
 		border-radius: 10px!important;
 	}
 	#nav-searchform {
-		background-color: var(--activity-content-1)!important;
+		background-color: var(--newsfeed-content-1)!important;
 		padding: 8px 48px 8px 6px!important;
 		border: none!important;
 		border-radius: 50px!important;
-		box-shadow: var(--activity-depth-1);
-		backdrop-filter: var(--activity-filter-glass);
+		box-shadow: var(--newsfeed-depth-1);
+		backdrop-filter: var(--newsfeed-filter-glass);
 		opacity: 1!important;
 		transition: box-shadow .3s!important;
 		/*防止搜索栏覆盖收藏弹窗*/
 		z-index: 0!important;
 	}
 	#nav-searchform:focus-within {
-		box-shadow: var(--activity-depth-2);
+		box-shadow: var(--newsfeed-depth-2);
 	}
 	.slide-down #nav-searchform {
-		box-shadow: var(--activity-depth-2);
+		box-shadow: var(--newsfeed-depth-2);
 	}
 	.nav-search-input {
-		color: var(--activity-text-1)!important;
+		color: var(--newsfeed-text-1)!important;
 	}
 	.bili-header .slide-down .center-search-container .center-search__bar {
 		width: 100%;
@@ -365,8 +378,8 @@
 	}
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform,
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform:hover {
-		background: var(--activity-elevated-2)!important;
-		backdrop-filter: var(--activity-filter-glass);
+		background: var(--newsfeed-elevated-2)!important;
+		backdrop-filter: var(--newsfeed-filter-glass);
 	}
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform:hover,
 	.bili-header .center-search-container .center-search__bar #nav-searchform {
@@ -374,9 +387,9 @@
 	}
 	.bili-header :not(.slide-down) .center-search-container .center-search__bar #nav-searchform {
 		opacity: 1;
-		background-color: var(--activity-elevated-1);
-		backdrop-filter: var(--activity-filter-glass);
-		color: var(--activity-text-1);
+		background-color: var(--newsfeed-elevated-1);
+		backdrop-filter: var(--newsfeed-filter-glass);
+		color: var(--newsfeed-text-1);
 	}
 	/*搜索栏搜索图标按钮*/
 	.bili-header .center-search-container .center-search__bar .nav-search-btn {
@@ -385,17 +398,17 @@
 		transition: .3s;
 	}
 	.bili-header .center-search-container .center-search__bar .nav-search-btn:hover {
-		background: var(--activity-fill-1);
+		background: var(--newsfeed-fill-1);
 		transform: rotate(-10deg) scale(0.9);
 	}
 	/*搜索结果面板*/
 	.bili-header .search-panel {
 		padding: unset!important;
 		border: none;
-		background: var(--activity-content-1);
-		backdrop-filter: var(--activity-filter-glass);
-		box-shadow: var(--activity-depth-2);
-		border-radius: calc(var(--activity-radius) * 2 - 2px)!important;
+		background: var(--newsfeed-content-1);
+		backdrop-filter: var(--newsfeed-filter-glass);
+		box-shadow: var(--newsfeed-depth-2);
+		border-radius: calc(var(--newsfeed-radius) * 2 - 2px)!important;
 		margin: .5rem 0;
 		display: block!important;
 		transition: .3s ease-out;
@@ -409,7 +422,7 @@
 		pointer-events: auto;
 	}
 	.bili-header .slide-down .search-panel {
-		background: var(--activity-elevated-2);
+		background: var(--newsfeed-elevated-2);
 	}
 	.bili-header .search-panel .history {
 		margin-top: 14px;
@@ -419,7 +432,7 @@
 		padding: .5rem;
 	}
 	.bili-header .suggest-item {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 		max-height: unset!important;
 		padding: 0 .5rem;
 		border-radius: 14px;
@@ -430,13 +443,13 @@
 	}
 	/*搜索历史*/
 	.bili-header .histories .history-item {
-		background: var(--activity-fill-1);
+		background: var(--newsfeed-fill-1);
 		transition: .3s;
-		border-radius: var(--activity-radius);
+		border-radius: var(--newsfeed-radius);
 	}
 	.bili-header .histories .history-item:hover {
-		background: var(--activity-theme-color-20);
-		color: var(--activity-theme-color);
+		background: var(--newsfeed-theme-color-20);
+		color: var(--newsfeed-theme-color);
 	}
 	.bili-header .histories .history-item .close {
 		display: block!important;
@@ -453,17 +466,17 @@
 	.bili-header .suggest-item.active,
 	.bili-header .suggest-item:hover,
 	.bili-header .suggest-item:focus {
-		background: var(--activity-fill-1);
+		background: var(--newsfeed-fill-1);
 	}
 	.bili-header .suggest_high_light {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 		font-weight: 900;
 		transition: .3s;
 	}
 	/*右侧搜索按钮*/
 	.bili-header .center-search-container .center-search__bar .nav-search-btn {
 		background-color: transparent;
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 		border-radius: 10px;
 	}
 	.bili-header .center-search-container .center-search__bar .nav-search-btn-text {
@@ -477,18 +490,18 @@
 	}
 	/*分区栏*/
 	.bili-header .bili-header__channel {
-		background: var(--activity-bgcolor)!important;
+		background: var(--newsfeed-bgcolor)!important;
 	}
 	.bili-header .channel-icons .icon-title {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	.bili-header .bili-header__channel .channel-entry-more__link,
 	.bili-header .bili-header__channel .channel-link {
-		background-color: var(--activity-elevated-1-solid)!important;
-		color: var(--activity-text-1)!important;
+		background-color: var(--newsfeed-elevated-1-solid)!important;
+		color: var(--newsfeed-text-1)!important;
 		border: none;
-		border-radius: var(--activity-radius);
-		box-shadow: var(--activity-depth-1);
+		border-radius: var(--newsfeed-radius);
+		box-shadow: var(--newsfeed-depth-1);
 		position: relative;
 		z-index: 1;
 	}
@@ -502,18 +515,18 @@
 		height: 100%;
 		z-index: -1;
 		transition: .3s ease-out;
-		border-radius: var(--activity-radius);
+		border-radius: var(--newsfeed-radius);
 	}
 	.bili-header .bili-header__channel .channel-entry-more__link:hover::after,
 	.bili-header .bili-header__channel .channel-link:hover::after {
-		background: var(--activity-fill-1);
+		background: var(--newsfeed-fill-1);
 	}
 	.bili-header .bili-header__channel .channel-items__left {
 		border: none;
 	}
 	/*新动态通知*/
 	.bili-header .channel-icons .channel-notify {
-		background: var(--activity-theme-color)
+		background: var(--newsfeed-theme-color)
 	}
 	/*动态 热门 频道*/
 	.header-channel-fixed-left {
@@ -525,10 +538,10 @@
 	/*顶栏右侧内容 帐号 消息 动态 收藏...*/
 	.bili-header .slide-down .right-entry {
 		/*这里把它们做成胶囊效果*/
-		backdrop-filter: var(--activity-filter-glass);
+		backdrop-filter: var(--newsfeed-filter-glass);
 		border-radius: 100px;
-		box-shadow: var(--activity-depth-2);
-		background: var(--activity-elevated-2);
+		box-shadow: var(--newsfeed-depth-2);
+		background: var(--newsfeed-elevated-2);
 		padding: 6px 0;
 	}
 	.bili-header .slide-down .left-entry .mini-header__title,
@@ -537,12 +550,12 @@
 	.bili-header .slide-down .left-entry .loc-mc-box__text,
 	.bili-header .slide-down .left-entry .download-entry,
 	.bili-header .slide-down .left-entry .loc-entry {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	/*顶栏登录*/
 	.bili-header .header-login-entry {
-		color: var(--activity-theme-color);
-		background-color: var(--activity-content-1-solid);
+		color: var(--newsfeed-theme-color);
+		background-color: var(--newsfeed-content-1-solid);
 	}
 	/*顶栏右侧图标项目*/
 	.bili-header .right-entry__outside {
@@ -557,10 +570,10 @@
 	/*投稿图标不变色*/
 	.bili-header .slide-down [class$="entry"] span:not(nth-last-child),
 	.bili-header .slide-down [class$="entry"] svg {
-		color: var(--activity-text-1)!important;
+		color: var(--newsfeed-text-1)!important;
 	}
 	.bili-header .slide-down .right-entry .right-entry__outside .right-entry-icon {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	.bili-header .right-entry {
 		display: flex;
@@ -619,14 +632,14 @@
 	}
 	/*投稿图标*/
 	.bili-header .header-upload-entry {
-		background: var(--activity-theme-color);
+		background: var(--newsfeed-theme-color);
 		color: white;
 		border-radius: 50px;
 		transition: .3s ease-out;
 		margin-right: 12px;
 	}
 	.bili-header .header-upload-entry:hover {
-		background: var(--activity-theme-color);
+		background: var(--newsfeed-theme-color);
 		filter: brightness(1.1)
 	}
 	/*顶栏遮罩*/
@@ -635,7 +648,7 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background: var(--activity-mask-banner-color);
+		background: var(--newsfeed-mask-banner-color);
 	}
 	/*顶栏过渡效果*/
 	.bili-header .bili-header__banner .taper-line {
@@ -649,7 +662,7 @@
 	.bili-header .bili-header__banner {
 		height: 100vh;
 		max-height: unset;
-		background: var(--activity-bgimg) center/cover!important;
+		background: var(--newsfeed-bgimg) center/cover!important;
 		transition: background 1s;
 	}
 	/*去除 banner 跳转连结*/
@@ -660,7 +673,7 @@
 		display: none;
 	}
 	.bili-header .bili-header__bar.slide-down + .bili-header__banner::after {
-		background-color: var(--activity-bgcolor);
+		background-color: var(--newsfeed-bgcolor);
 		filter: opacity(.6);
 	}
 	/*去除礙眼物*/
@@ -678,14 +691,12 @@
 	}
 	/*顶栏*/
 	.bili-header {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 		transition: .3s;
 	}
 	/*顶栏条*/
 	.bili-header .bili-header__bar {
 		margin-top: 8px;
-		/*修正全屏显示壁纸时元素宽度问题导致出现横向滚动条问题，包括其他几个首页样式的横向滚动条问题*/
-		width: calc(100vw - 8px);
 		/*修正banner点击顶栏消失问题*/
 		display: flex!important;
 	}
@@ -728,7 +739,7 @@
 	}
 	.bili-dyn-my-info__stat__item:hover div,
 	.bili-dyn-my-info__name.bili-ellipsis:hover {
-		color: var(--activity-theme-color)!important;
+		color: var(--newsfeed-theme-color)!important;
 	}
 	.bili-dyn-my-info__stat__item__label/*左上个人卡片关注、粉丝、动态*/{
 		color: rgba(255, 255, 255, 0.6);
@@ -788,11 +799,11 @@
 	.bili-topic-search__input__prefix,
 	.bili-topic-item__normal__prefix[data-v-df315e38],
 	.bili-topic-selector__bulletin__clear__icon/*选择话题按钮图标*/{
-		color: var(--activity-theme-color);
+		color: var(--newsfeed-theme-color);
 	}
 	.bili-topic-search__input__text,
 	.bili-topic-item__normal__name[data-v-df315e38]/*选择话题按钮字体*/{
-		color: var(--activity-theme-color);
+		color: var(--newsfeed-theme-color);
 	}
 	.bili-topic-search__popover.active/*选择话题大卡片*/{
 		border-radius: 28px;
@@ -823,7 +834,7 @@
 	}
 	.bili-topic-item__cloud__name[data-v-df315e38],
 	.bili-topic-item__cloud__prefix[data-v-df315e38]/*选择话题大卡片搜索推荐の强调字体*/{
-		color: var(--activity-theme-color);
+		color: var(--newsfeed-theme-color);
 	}
 	.bili-topic-selector__bulletin/*已选择话题栏*/{
 		background-color: rgba(51, 51, 51, 1);
@@ -954,8 +965,8 @@
 	.bili-input:hover:before,
 	.bili-radio__inner,
 	.bili-create-poll-add {
-		color: var(--activity-theme-color);
-		border-color: var(--activity-theme-color)!important;
+		color: var(--newsfeed-theme-color);
+		border-color: var(--newsfeed-theme-color)!important;
 	}
 	.bili-input__inner/*投票页填写标题文本框样式*/{
 		background-color: rgba(71, 71, 71, 1);
@@ -972,7 +983,7 @@
 		background-color: #0000;
 	}
 	.bili-radio__inner:after/*投票类型选项*/{
-		background-color: var(--activity-theme-color);
+		background-color: var(--newsfeed-theme-color);
 	}
 	.bili-select-dropdown,
 	.cancel/*更多设置多选表单文字及背景样式*/{
@@ -992,7 +1003,7 @@
 		border: 0px;
 	}
 	.bili-popover-modal__button.confirm:not(.disabled) {
-		background-color: var(--activity-theme-color);
+		background-color: var(--newsfeed-theme-color);
 		color: #fff;
 	}
 	div.bili-picker-input.bili-input.bili-input--suffix.small > input/*日期,小时,分钟选择表单背景样式*/{
@@ -1028,9 +1039,9 @@
 	}
 	.bili-date-table tbody tr td.active,
 	.bili-picker__option.active/*选择日期弹出界面已选日期样式*/{
-		border: 1px solid var(--activity-theme-default);
+		border: 1px solid var(--newsfeed-theme-default);
 		border-radius: 4px;
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 		font-weight: normal;
 	}
 	.bili-date-table td,
@@ -1053,7 +1064,7 @@
 		bottom: 0px;
 	}
 	.bili-comment-option__item.active/*评论相关选项*/{
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 }
 
@@ -1065,7 +1076,7 @@
 	.bili-dyn-publishing__action.launcher,
 	.bili-dyn-publishing__action/*发布动态按钮*/{
 		border-radius: 14px;
-		background-color: var(--activity-theme-color);
+		background-color: var(--newsfeed-theme-color);
 	}
 	.bili-dyn-up-list/*最常浏览up主卡片背景*/{
 		border-radius: 28px;
@@ -1092,7 +1103,7 @@
 	.bili-dyn-list-tabs__item:hover,
 	/*动态视频分类下划线颜色*/
 	.bili-dyn-list-tabs__highlight{
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 	.bili-dyn-list-tabs/*动态视频分类*/{
 		border-radius: 28px;
@@ -1158,7 +1169,7 @@
 	/*转发卡片“详情”*/
 	[data-module="desc"][data-orig] .details,
 	.card[data-did] .content .details {
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 	.bili-rich-text-topic:hover,
 	.bili-rich-text-link:hover,
@@ -1219,7 +1230,7 @@
 	.bili-dyn-title__label,
 	.bili-dyn-card-medialist__badge/*投稿视频、直播、番剧、课堂小胶囊*/{
 		border-radius: 14px;
-		background: var(--activity-theme-color);
+		background: var(--newsfeed-theme-color);
 		backdrop-filter: blur(3px);
 		padding: 0 9px;
 		z-index: 1;
@@ -1253,8 +1264,8 @@
 		width: 520px;
 		margin-left: 0;
 	}
-	.bili-dyn-content__orig__major/*转发图文卡片*/{
-		padding-right: 13px;
+	.bili-dyn-content__orig__major,.bili-dyn-content__orig__additional,.bili-dyn-content__orig .bili-album/*转发图文卡片*/{
+		width: calc(520px - 14px);
 	}
 	[data-module=desc][data-orig] .details/*转发“详情”*/{
 		opacity: 1;
@@ -1320,6 +1331,7 @@
 	.dyn-goods__wrap,
 	.dyn-upower-lottery__card,
 	.dyn-ugc__wrap,
+	.dyn-match__wrap,
 	.dyn-ugc__cover,
 	.dyn-tip /*相关信息卡片背景*/{
 		background-color: rgba(255, 255, 255, 0.1)!important;
@@ -1362,7 +1374,7 @@
 	.dyn-goods__one__detail__price span,/*商品价格*/
 	.dyn-reserve__lottery__text,/*相关信息链接文字*/
 	.dyn-upower-lottery__lottery__text {
-		color: var(--activity-theme-default)!important;
+		color: var(--newsfeed-theme-default)!important;
 	}
 	/*相关信息链接图标*/
 	.dyn-reserve__lottery__icon {
@@ -1374,10 +1386,11 @@
 	.dyn-vote__action button,
 	.dyn-goods__one__action button,
 	.dyn-upower-lottery__action button,
+	.dyn-match__action button,
 	.dyn-blocked-mask.feed-item .dyn-blocked-mask__btn/*相关信息卡片相关按钮*/{
 		border-radius: 7px;
 		border: 0;
-		background-color: var(--activity-theme-color-85);
+		background-color: var(--newsfeed-theme-color-85);
 		color: #fff
 	}
 	.dyn-additional-common__detail/*相关信息卡片文字部分宽度*/{
@@ -1451,8 +1464,8 @@
 		box-shadow: 0 0 25px rgba(51, 51, 51, .5);
 	}
 	.comment-submit/*发布评论按钮样式*/{
-		background-color: var(--activity-theme-color-85)!important;
-		border-color: var(--activity-theme-color-85)!important;
+		background-color: var(--newsfeed-theme-color-85)!important;
+		border-color: var(--newsfeed-theme-color-85)!important;
 		border-radius: 7px;
 		border: 0;
 	}
@@ -1532,7 +1545,7 @@
 	.comment-bilibili-fold .comment-list .list-item .text-con .comment-jump-url,/*评论中的链接*/
 	.bb-comment .bottom-page.center a:hover,/*评论下的回复按钮颜色*/
 	.bb-comment .comment-list .list-item .info .btn-hover:hover/*评论的评论下的更多按钮颜色*/{
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 	.bb-comment .comment-list .list-item .con,
 	.comment-bilibili-fold .comment-list .list-item .con/*去除评论下划线*/{
@@ -1682,7 +1695,7 @@
 		color: rgba(255, 255, 255, 0.4);
 	}
 	.relevant-topic:hover .relevant-topic__title/*话题触摸标题*/{
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 }
 
@@ -1816,7 +1829,7 @@
 	.be-live-list-header .be-live-list-more:hover .be-iconfont-right-arrow,
 	.be-live-list-content .be-live-list-item:hover .be-live-list-item-title,
 	.be-live-list-content .be-live-list-item-user:hover{
-		color: var(--activity-theme-default);
+		color: var(--newsfeed-theme-default);
 	}
 	.be-live-list/*直播列表卡片*/{
 		border-radius: 28px;
@@ -1881,7 +1894,7 @@
 	.manga-panel .manga-list-box .manga-card:hover .manga-title,
 	.suggest_high_light,
 	.bili-header .bili-header__channel .channel-link__right:hover {
-		color: var(--activity-theme-color)!important;
+		color: var(--newsfeed-theme-color)!important;
 	}
 
 	a:hover,
@@ -1906,12 +1919,12 @@
 	.bili-rank-list-cheese a:hover,
 	.bili-header .header .clear:hover,
 	.bili-header .history-fold-wrap:hover .fold-text {
-		color: var(--activity-theme-color)
+		color: var(--newsfeed-theme-color)
 	}
 
 	.bili-header .history-fold-wrap:hover .fold-icon,
 	.bili-header .bili-header__channel .channel-link__right:hover .side-icon {
-		fill: var(--activity-theme-color)
+		fill: var(--newsfeed-theme-color)
 	}
 
 
@@ -1923,7 +1936,7 @@
 	.live-card,
 	.manga-rank-item .preview .preview-link,
 	.international-footer {
-		background: var(--activity-content-1-solid);
+		background: var(--newsfeed-content-1-solid);
 	}
 	.rank-header .name,
 	.storey-title .name,
@@ -1931,7 +1944,7 @@
 	.popover-video-card .content .info .f-title,
 	.ifmt h3,
 	.area-header .title span {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	a,
 	.elevator .list-box .item,
@@ -1960,13 +1973,13 @@
 	.channel-entry-popover .name,
 	.more-channel-popover .name,
 	.bili-header .bili-header__channel .channel-link__right {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	.bili-header .upload-panel-popover .upload-item .item-icon {
-		color: var(--activity-text-1);
+		color: var(--newsfeed-text-1);
 	}
 	.bili-header .bili-header__channel .channel-link__right .side-icon {
-		fill: var(--activity-text-1)
+		fill: var(--newsfeed-text-1)
 	}
 
 	.video-card-common .up,
@@ -1981,11 +1994,11 @@
 	.bili-header .header .clear,
 	.bili-video-card .bili-video-card__info--bottom,
 	.bili-rank-list-video .bili-rank-list-video__item--index {
-		color: var(--activity-text-3);
+		color: var(--newsfeed-text-3);
 	}
 	.tab-line-itnl,
 	.international-footer .link-box .link-item {
-		border-color: var(--activity-divide);
+		border-color: var(--newsfeed-divide);
 	}
 	.vp-container a {
 		color: #000;
@@ -1993,17 +2006,17 @@
 	.bili-header .upload-panel-popover .upload-item:hover,
 	.channel-entry-popover .name:hover,
 	.more-channel-popover .name:hover {
-		background: var(--activity-fill-1);
+		background: var(--newsfeed-fill-1);
 	}
 	/*已关注*/
 	.bili-video-card .bili-video-card__info--icon-text {
-		color: var(--activity-theme-color);
-		background: var(--activity-theme-color-20);
+		color: var(--newsfeed-theme-color);
+		background: var(--newsfeed-theme-color-20);
 	}
 	/*直播中*/
 	.bili-live-card .bili-live-card__info--living {
-		color: var(--activity-text-1);
-		background: var(--activity-fill-2);
+		color: var(--newsfeed-text-1);
+		background: var(--newsfeed-fill-2);
 		border: none;
 	}
 }
@@ -2011,55 +2024,55 @@
 @-moz-document url-prefix("https://t.bilibili.com") {
 	/*样式颜色、阴影、滤镜等变量，和自定义选项作出的修改*/
 	/*改自hakadao的https://userstyles.world/style/3022/bilibili*/:root {
-		--activity-bgcolor: hsl(220, 14%, 96%);
-		--activity-theme-default: rgb(0, 179, 255);
+		--newsfeed-bgcolor: hsl(220, 14%, 96%);
+		--newsfeed-theme-default: rgb(0, 179, 255);
 
-		--activity-mask-banner-opacity: 0;
-		--activity-mask-banner-color: hsla(219, 26%, 96%, var(--activity-mask-banner-opacity));
+		--newsfeed-mask-banner-opacity: 0;
+		--newsfeed-mask-banner-color: hsla(219, 26%, 96%, var(--newsfeed-mask-banner-opacity));
 
-		--activity-content-1: rgba(255, 255, 255, 1);
-		--activity-content-1-solid: rgba(255, 255, 255, 1);
-		--activity-elevated-1: rgb(255, 255, 255);
-		--activity-elevated-2: rgb(255, 255, 255);
-		--activity-elevated-1-solid: rgb(255, 255, 255);
-		--activity-elevated-2-solid: rgb(255, 255, 255);
+		--newsfeed-content-1: rgba(255, 255, 255, 1);
+		--newsfeed-content-1-solid: rgba(255, 255, 255, 1);
+		--newsfeed-elevated-1: rgb(255, 255, 255);
+		--newsfeed-elevated-2: rgb(255, 255, 255);
+		--newsfeed-elevated-1-solid: rgb(255, 255, 255);
+		--newsfeed-elevated-2-solid: rgb(255, 255, 255);
 
-		--activity-divide: rgba(60, 60, 67, 0.1);
-		--activity-fill-1: rgba(120, 120, 128, 0.15);
-		--activity-fill-2: rgba(120, 120, 128, 0.09);
+		--newsfeed-divide: rgba(60, 60, 67, 0.1);
+		--newsfeed-fill-1: rgba(120, 120, 128, 0.15);
+		--newsfeed-fill-2: rgba(120, 120, 128, 0.09);
 
-		--activity-text-1: #000;
-		--activity-text-2: hsla(240, 6%, 15%, .8);
-		--activity-text-3: hsla(240, 6%, 25%, .6);
+		--newsfeed-text-1: #000;
+		--newsfeed-text-2: hsla(240, 6%, 15%, .8);
+		--newsfeed-text-3: hsla(240, 6%, 25%, .6);
 
-		--activity-radius: 10px;
+		--newsfeed-radius: 10px;
 
 		/*主题颜色*/
-		--activity-theme-color: /*[[T_THEME_COLOR_NEW]]*/;
-		--activity-theme-color-85: /*[[T_THEME_COLOR_NEW]]*/d6;
-		--activity-theme-color-50: /*[[T_THEME_COLOR_NEW]]*/80;
-		--activity-theme-color-40: /*[[T_THEME_COLOR_NEW]]*/66;
-		--activity-theme-color-30: /*[[T_THEME_COLOR_NEW]]*/4d;
-		--activity-theme-color-20: /*[[T_THEME_COLOR_NEW]]*/33;
+		--newsfeed-theme-color: /*[[T_THEME_COLOR_NEW]]*/;
+		--newsfeed-theme-color-85: /*[[T_THEME_COLOR_NEW]]*/d6;
+		--newsfeed-theme-color-50: /*[[T_THEME_COLOR_NEW]]*/80;
+		--newsfeed-theme-color-40: /*[[T_THEME_COLOR_NEW]]*/66;
+		--newsfeed-theme-color-30: /*[[T_THEME_COLOR_NEW]]*/4d;
+		--newsfeed-theme-color-20: /*[[T_THEME_COLOR_NEW]]*/33;
 
-		--activity-depth-1: 0 6px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.03);
-		--activity-depth-2: 0 9px 18px rgba(0, 0, 0, 0.07), 0 6px 12px rgba(0, 0, 0, 0.05);
+		--newsfeed-depth-1: 0 6px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.03);
+		--newsfeed-depth-2: 0 9px 18px rgba(0, 0, 0, 0.07), 0 6px 12px rgba(0, 0, 0, 0.05);
 
 		/*覆盖b站颜色变量*/
-		--text1: var(--activity-text-1);
-		--text2: var(--activity-text-2);
-		--text3: var(--activity-text-3);
-		--graph_bg_thick: var(--activity-fill-1);
-		--graph_bg_regular: var(--activity-fill-2);
-		--bg1: var(--activity-content-1-solid);
-		--brand_blue: var(--activity-theme-color);
+		--text1: var(--newsfeed-text-1);
+		--text2: var(--newsfeed-text-2);
+		--text3: var(--newsfeed-text-3);
+		--graph_bg_thick: var(--newsfeed-fill-1);
+		--graph_bg_regular: var(--newsfeed-fill-2);
+		--bg1: var(--newsfeed-content-1-solid);
+		--brand_blue: var(--newsfeed-theme-color);
 	}
 	@supports (backdrop-filter: blur(15px)) {
 		:root {
-			--activity-filter-glass: blur(15px);
-			--activity-content-1: rgba(255, 255, 255, .6);
-			--activity-elevated-1: rgba(255, 255, 255, .6);
-			--activity-elevated-2: rgba(255, 255, 255, 70%);
+			--newsfeed-filter-glass: blur(15px);
+			--newsfeed-content-1: rgba(255, 255, 255, .6);
+			--newsfeed-elevated-1: rgba(255, 255, 255, .6);
+			--newsfeed-elevated-2: rgba(255, 255, 255, 70%);
 		}
 	}
 
@@ -2073,7 +2086,7 @@
 		background: transparent;
 	}
 	html > ::-webkit-scrollbar-track {
-		background: var(--activity-bgcolor);
+		background: var(--newsfeed-bgcolor);
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: hsl(0 0% 50% / .6);
@@ -2081,7 +2094,7 @@
 	}
 	/* custom firefox scrollbar */
 	html > * {
-		scrollbar-color: hsl(0 0% 50% / .6) var(--activity-bgcolor);
+		scrollbar-color: hsl(0 0% 50% / .6) var(--newsfeed-bgcolor);
 		scrollbar-width: thin!important;
 	}
 	* {
@@ -2093,19 +2106,20 @@
 	/*[[FW_BANNER]]*/
 	/*[[FW_FRAME]]*/
 	/*[[FW_ICON]]*/
+	/*[[FW_SHARE]]*/
 	/*[[CAPSULE_DESIGN]]*/
 	/*[[GPUS]]*/
 	/*[[L_BLUR]]*/
 
 	/*处理顶栏链接内容，使其在自定义背景下banner上方文字链接有阴影使其能看清文字*/
 	.bili-header :not(.slide-down) .right-entry {
-		backdrop-filter: var(--activity-filter-glass);
+		backdrop-filter: var(--newsfeed-filter-glass);
 		border-radius: 100px;
-		box-shadow: var(--activity-depth-1);
+		box-shadow: var(--newsfeed-depth-1);
 	}
 
 	:root {
-		--activity-bgimg: /*[[T_DIV_BG]]*/;
-		--activity-bg-custom: /*[[T_CUSTOM_BG]]*/;
+		--newsfeed-bgimg: /*[[T_DIV_BG]]*/;
+		--newsfeed-bg-custom: /*[[T_CUSTOM_BG]]*/;
 	}
 }
