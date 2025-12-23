@@ -12,7 +12,7 @@
 
 ## 安装
 
-> 请先在浏览器安装 `Stylus` 插件，如步奏一
+> 请先在浏览器安装 `Stylus` 插件，如步骤一
 
 1. 安装方式
 - Chrome&Edge [极简插件(荐)](https://chrome.zzzmh.cn/info/clngdbkpkpeebahjckkjfobafhncgmne), [谷歌商店(被墙)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
