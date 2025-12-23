@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩动态页主题（翻新）
 @namespace		bilibili-newsfeed-theme
-@version		2.10.0+20240607
+@version		2.10.3+20251223
 @description	（翻新）深度适配bilibili动态页，大量运用模糊与大圆角元素
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://hitfun.top) [https://space.bilibili.com/646195980]
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-newsfeed-theme
@@ -11,7 +11,7 @@
 @preprocessor	uso
 
 \/*原样式：https://userstyles.world/style/2677/bilibili*\/
-\/*原作者：noname <https://userstyles.world/user/noname>*\/
+\/*原作者：noname <https://userstyles.world/user/noname> <https://space.bilibili.com/164644572>*\/
 
 @advanced color T_THEME_COLOR_NEW "选择主题色（十六进制非透明颜色，如默认蓝 #00a1d6、默认粉 #fb7299）" #00a1d6
 
@@ -707,8 +707,8 @@
 		justify-content: center;
 	}
 	.mini-header {
-		background: #0000;
-		box-shadow: 0 2px 4px #0000;
+		background: #0000!important;
+		box-shadow: 0 2px 4px #0000!important;
 	}
 }
 
@@ -1838,7 +1838,7 @@
 		margin-top: 10px;
 		padding-bottom: 24px;
 	}
-	.be-icon/*直播卡片图标颜色*/{
+	.be-icon:not(.be-settings .be-icon)/*直播卡片图标颜色（兼容Setting）*/{
 		color: rgba(255, 255, 255, 0.8);
 	}
 	.be-live-list-header .be-live-list-title/*直播卡片标题颜色*/{
