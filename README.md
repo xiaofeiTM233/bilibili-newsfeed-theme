@@ -4,11 +4,7 @@
 
 如有问题，欢迎提交Issues！
 
-~~新版本开荒：https://github.com/xiaofeiTM233/bilibili-new-newsfeed-theme~~
-
-如需正常使用本样式请点击返回旧版！
-
-如果顶栏无法适配，请尝试点击首页的返回旧版，再前往新版！首页已无返回按钮的请自行添加名称为``i-wanna-go-back``，值为``-1``的Cookie！
+正在适配新版动态页
 
 ## 安装
 
@@ -19,7 +15,7 @@
 - Firefox [火狐商店](https://addons.mozilla.org/zh-CN/firefox/addon/styl-us)
 - 其他 [www.baidu.com/s?wd=stylus](https://www.baidu.com/s?wd=stylus)
 
-2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/5471/bilibili)
+2. [点击此处安装或更新](https://github.com/xiaofeiTM233/bilibili-newsfeed-theme/raw/main/index.user.css) [前往UserStyles.world 安装](https://userstyles.world/style/29144/bilibili)
 
 ## 效果
 
