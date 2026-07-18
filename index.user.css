@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩新动态页主题
 @namespace		bilibili-new-newsfeed-theme
-@version		3.0.2+20260718
+@version		3.0.3+20260718
 @description	深度适配bilibili动态页，阿b就是屑
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://02000721.xyz)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-newsfeed-theme
@@ -30,36 +30,55 @@
 
 @advanced text T_CUSTOM_GLASS "自定义毛玻璃（默认 15px、旧版本 40px）" "15px"
 
-@advanced dropdown TB "覆盖B站样式" {
-	TB_B "跟随B站颜色" <<<EOT
+@advanced dropdown TB "卡片样式" {
+	TB_B "跟随B站" <<<EOT
 	EOT;
 
-	TB_A "保持主题颜色" <<<EOT
-		--text1: var(--newsfeed-text-1);
-		--text2: var(--newsfeed-text-2);
-		--text3: var(--newsfeed-text-3);
+	TB_A "保持主题" <<<EOT
+		--newsfeed-filter: var(--newsfeed-filter-glasses);
 		--line_regular: var(--newsfeed-fill-2);
 		--bg1: rgba(0, 0, 0, 0.5);
 		--bg2: #0000;
 		--bg3: #0000;
-		--newsfeed-filter: var(--newsfeed-filter-glasses);
+		--bg1_float: #1e2022;
+		--bg2_float: #232527;
+		--bg3_float: #232527;
 	EOT;
 }
 
-@advanced dropdown T_THEME "深浅主题" {
+@advanced dropdown T_THEME "深浅主题（建议同时切换B站主题）" {
 	T_THEME_B "跟随B站颜色" <<<EOT
 		--newsfeed-fill-1: var(--graph_bg_thick);
 		--newsfeed-fill-2: var(--graph_bg_regular);
+		--newsfeed-text-1: var(--text1);
+		--newsfeed-text-2: var(--text2);
+		--newsfeed-text-3: var(--text3);
+		--newsfeed-text-4: var(--text4);
+		--newsfeed-cover: var(--bg2);
 	EOT;
 
-	T_THEME_A "保持主题颜色" <<<EOT
-		--newsfeed-fill-1: rgba(255, 255, 255, 0.1);
-		--newsfeed-fill-2: rgba(255, 255, 255, 0.1);
+	T_THEME_A "保持主题颜色（建议搭配B站深色主题）" <<<EOT
+		--newsfeed-fill-1: var(--graph_bg_thick);
+		--newsfeed-fill-2: var(--graph_bg_regular);
+		--newsfeed-text-1: rgba(255, 255, 255, 0.8);
+		--newsfeed-text-2: rgba(255, 255, 255, 0.7);
+		--newsfeed-text-3: rgba(205, 205, 205, 0.6);
+		--newsfeed-text-4: rgba(205, 205, 205, 0.5);
+		--newsfeed-cover: rgba(255, 255, 255, 0.1);
+		--text1: var(--newsfeed-text-1);
+		--text2: var(--newsfeed-text-2);
+		--text3: var(--newsfeed-text-3);
 	EOT;
 
 	T_THEME_1 "深色" <<<EOT
 		--newsfeed-fill-1: #1e2022;
 		--newsfeed-fill-2: #232527;
+		--newsfeed-text-1: #e7e9eb;
+		--newsfeed-text-2: #a2a7ae;
+		--newsfeed-text-3: #757a81;
+		--newsfeed-text-4: #46494d;
+		--newsfeed-cover: rgba(255, 255, 255, 0.1);
+		--graph_bg_thin: var(--newsfeed-fill-1);
 		--graph_bg_thick: var(--newsfeed-fill-1);
 		--graph_bg_regular: var(--newsfeed-fill-2);
 	EOT;
@@ -67,6 +86,12 @@
 	T_THEME_2 "浅色" <<<EOT
 		--newsfeed-fill-1: #f6f7f8;
 		--newsfeed-fill-2: #f1f2f3;
+		--newsfeed-text-1: #18191c;
+		--newsfeed-text-2: #61666d;
+		--newsfeed-text-3: #9499a0;
+		--newsfeed-text-4: #c9ccd0;
+		--newsfeed-cover: rgba(0, 0, 0, 0.1);
+		--graph_bg_thin: var(--newsfeed-fill-1);
 		--graph_bg_thick: var(--newsfeed-fill-1);
 		--graph_bg_regular: var(--newsfeed-fill-2);
 	EOT;
@@ -221,9 +246,10 @@
 	}
 	/*左上个人卡片*/
 	.bili-dyn-my-info {
-		border-radius: var(--newsfeed-radius);
 		background: var(--bg1);
+		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
 	/*左上个人卡片头像昵称框*/
 	.bili-dyn-my-info__header {
@@ -238,17 +264,18 @@
 	.bili-dyn-my-info__stats {
 		justify-content: space-around;
 	}
-	/*直播列表卡片*/
+	/*直播卡片*/
 	.bili-dyn-live-users {
 		border-radius: var(--newsfeed-radius);
 		background: var(--bg1);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
-	/*直播卡片列表*/
+	/*直播卡片直播间列表*/
 	.bili-dyn-live-users__body {
 		height: 30em;
 	}
-	/*直播卡片*/
+	/*直播卡片直播间*/
 	.bili-dyn-live-users__container {
 		padding: 0;
 	}
@@ -263,10 +290,16 @@
 		background: var(--bg1);
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
 	.bili-dyn-search-trendings .b-img,
 	.bili-dyn-search-trendings .trending-list .trending:hover {
 		background: none;
+	}
+	/*右下按钮*/
+	.bili-dyn-sidebar__btn {
+		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
@@ -281,10 +314,10 @@
 		background-color: var(--Wh0);
 	}
 	/*动态发布卡片背景*/
-	.bili-dyn-publishing,
-	.bili-popup__wrap {
+	.bili-dyn-publishing {
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 		z-index: 1;
 	}
 	/*动态发布卡片文本背景*/
@@ -311,9 +344,6 @@
 	.bili-pics-uploader__add:hover:before {
 		background-color: var(--newsfeed-theme-color);
 	}
-}
-@-moz-document url-prefix("https://t.bilibili.com") {
-	/*动态页中列中*/
 	/*发布动态按钮*/
 	.bili-dyn-publishing__action.toarticle,
 	.bili-dyn-publishing__action.launcher,
@@ -328,27 +358,24 @@
 	.bili-dyn-publishing__action:not(.disabled):hover {
 		background: var(--newsfeed-theme-color-85);
 	}
-	/*最常浏览up主卡片背景*/
+}
+@-moz-document url-prefix("https://t.bilibili.com") {
+	/*动态页中列中*/
+	/*up主卡片列表背景*/
 	.bili-dyn-up-list {
 		background: var(--bg1);
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
-	.bili-dyn-up-list__nav .bili-dyn-up-list__nav__shim,
-	.bili-dyn-up-list__nav .bili-dyn-up-list__nav__shadow {
+	.bili-dyn-up-list .bili-dyn-up-list__nav .bili-dyn-up-list__nav__shim,
+	.bili-dyn-up-list .bili-dyn-up-list__nav .bili-dyn-up-list__nav__shadow {
 		background: #0000!important;
 	}
-	/*有新动态卡片样式*/
-	.bili-dyn-list-notification {
-		background: rgba(252, 249, 215, 0.5);
-		backdrop-filter: blur(20px);
-		border-radius: var(--newsfeed-radius);
-		font-weight: bold;
-		text-shadow: 0px 0px 20px rgba(151, 120, 42, 1);
-	}
-	/*up主卡片*/
-	.bili-dyn-up-list__window {
+	/*up主卡片列表*/
+	.bili-dyn-up-list .bili-dyn-up-list__window {
 		padding: 9px 0 0 0;
+		border-radius: var(--newsfeed-radius);
 	}
 	/*up主卡片字体颜色*/
 	.bili-dyn-up-list__item .bili-dyn-up-list__item__name.bili-ellipsis,
@@ -378,10 +405,15 @@
 		background: var(--bg1);
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
-	/*视频分类字体颜色*/
-	.bili-dyn-list-tabs__item {
-		color: #99a2aa;
+	/*有新动态卡片样式*/
+	.bili-dyn-list-notification {
+		background: var(--bg1);
+		border-radius: var(--newsfeed-radius);
+		backdrop-filter: var(--newsfeed-filter);
+		font-weight: bold;
+		text-shadow: 0px 0px 20px rgba(151, 120, 42, 1);
 	}
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
@@ -396,6 +428,7 @@
 		background: var(--bg1);
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
 	/*数字藏品不配强制放大头像*/
 	.b-avatar__layer[style="width: 62.4px; height: 62.4px; opacity: 1; border-radius: 50%;"] {
@@ -450,7 +483,7 @@
 	.bili-dyn-item .bili-dyn-content__orig.reference {
 		margin-top: 0px;
 		border-radius: calc(var(--newsfeed-radius) / 2);
-		background: rgba(255, 255, 255, 0.1);
+		background: var(--newsfeed-cover);
 		padding: 7px;
 	}
 	/*卡片*/
@@ -501,10 +534,10 @@
 	.bili-dyn-item .bili-dyn-card-medialist:hover .bili-dyn-card-medialist__title,
 	.bili-dyn-item .bili-dyn-card-music:hover .bili-dyn-card-music__title,
 	/*文本动态字体*/
-	.bili-dyn-item .bili-rich-text-link,
-	/*.bili-dyn-item .bili-rich-text-module,*/
-	.bili-dyn-item .bili-rich-text-topic,
-	.bili-dyn-item .bili-rich-text-viewpic,
+	.bili-dyn-item .bili-dyn-content .bili-rich-text-link,
+	.bili-dyn-item .bili-dyn-content .bili-rich-text-module,
+	.bili-dyn-item .bili-dyn-content .bili-rich-text-topic,
+	.bili-dyn-item .bili-dyn-content .bili-rich-text-viewpic,
 	/*相关信息字体*/
 	.bili-dyn-item .bili-dyn-card-goods__wrap:hover .bili-dyn-card-goods__one__detail__name,
 	.bili-dyn-item .bili-dyn-card-link-common__wrap:hover .bili-dyn-card-link-common__detail__title,
@@ -630,9 +663,6 @@
 	.slide-down #nav-searchform {
 		box-shadow: var(--newsfeed-depth-2);
 	}
-	.nav-search-input {
-		color: var(--newsfeed-divide)!important;
-	}
 	.bili-header .slide-down .center-search-container .center-search__bar {
 		width: 100%;
 	}
@@ -657,7 +687,7 @@
 	}
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform,
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform:hover {
-		/*background: var(--newsfeed-elevated-2)!important;*/
+		background: var(--bg1_float)!important;
 		backdrop-filter: var(--newsfeed-filter);
 	}
 	.bili-header .slide-down .center-search-container .center-search__bar #nav-searchform:hover,
@@ -666,7 +696,7 @@
 	}
 	.bili-header :not(.slide-down) .center-search-container .center-search__bar #nav-searchform {
 		opacity: 1;
-		/*background-color: var(--newsfeed-elevated-1);*/
+		background-color: var(--bg1);
 		backdrop-filter: var(--newsfeed-filter);
 		color: var(--newsfeed-text-1);
 	}
@@ -701,7 +731,7 @@
 		pointer-events: auto;
 	}
 	.bili-header .slide-down .search-panel {
-		background: var(--newsfeed-elevated-2);
+		background: var(--bg1);
 	}
 	.bili-header .search-panel .history {
 		margin-top: 14px;
@@ -958,7 +988,7 @@
 	}
 	/*去除礙眼物*/
 	/*顶栏左侧多余项目，保留首页按钮*/
-	.bili-header .left-entry li:not(:nth-child(1)),
+	.bili-header .left-entry li:not(:first-child),
 	/*大会员*/
 	.bili-header .right-entry li:nth-child(2),
 	/*热门搜寻*/
@@ -1000,9 +1030,10 @@
 	.bili-dyn-comment .fold-comment {
 		color: var(--newsfeed-text-1);
 		border-radius: calc(var(--newsfeed-radius) / 2);
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
+		background: var(--newsfeed-cover);
+		margin-bottom: 1em;
 		width: 100%;
+		border: 0;
 	}
 	.bili-dyn-comment .fold-comment:hover,
 	.be-live-list-header .be-live-list-refresh:hover,
@@ -1014,8 +1045,8 @@
 	}
 	/*直播列表卡片*/
 	.be-live-list {
-		border-radius: var(--newsfeed-radius);
 		background: var(--bg1);
+		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
 		margin-top: 10px;
 		padding-bottom: 24px;
@@ -1047,7 +1078,7 @@
 	.be-live-list-search .be-textbox input[type=text][data-v-242237dc] {
 		border: 0;
 		border-radius: 7px;
-		background-color: rgba(255, 255, 255, 0.1);
+		background-color: var(--newsfeed-cover);
 		transition: 0.2s;
 		color: var(--newsfeed-text-1);
 	}
@@ -1066,14 +1097,15 @@
 	}
 	/*直播UP主标题*/
 	.be-live-list-content .be-live-list-item-title {
-		color: var(--newsfeed-text-3);
+		color: var(--newsfeed-text-2);
 	}
 	/*直播UP主昵称*/
 	.be-live-list-content .be-live-list-item-user {
-		color: var(--newsfeed-text-3);
+		color: var(--newsfeed-text-2);
 	}
 	#biliscope-id-card {
 		background: var(--bg1_float);
+		box-shadow: var(--newsfeed-shadow);
 	}
 	#biliscope-id-card .idc-uname[style="color: #18191C"] {
 		color: var(--text1)!important;
@@ -1097,24 +1129,28 @@
 @-moz-document url-prefix("https://t.bilibili.com") {
 	/*样式变量*/
 	:root {
-		--newsfeed-bgcolor: hsl(220, 14%, 96%);
-		--newsfeed-theme-default: rgb(0, 179, 255);
-
+		/*计划被替代的变量*/
 		--newsfeed-mask-banner-opacity: 0;
 		--newsfeed-mask-banner-color: hsla(219, 26%, 96%, var(--newsfeed-mask-banner-opacity));
-
 		--newsfeed-content-1: rgba(255, 255, 255, .4);
 		--newsfeed-content-1-solid: rgba(205, 205, 205, 0.6);
 		--newsfeed-elevated-1: rgb(255, 255, 255);
 		--newsfeed-elevated-2: rgb(255, 255, 255);
 		--newsfeed-elevated-1-solid: rgb(255, 255, 255);
 		--newsfeed-elevated-2-solid: rgb(255, 255, 255);
+		
+		/*常用变量*/
+		--newsfeed-bgcolor: hsl(220, 14%, 96%);
+		--newsfeed-theme-default: rgb(0, 179, 255);
 
 		--newsfeed-divide: rgba(255, 255, 255, 0.8);
-
+		--newsfeed-cover: rgba(255, 255, 255, 0.1);
 		--newsfeed-text-1: rgba(255, 255, 255, 0.8);
 		--newsfeed-text-2: rgba(255, 255, 255, 0.7);
 		--newsfeed-text-3: rgba(205, 205, 205, 0.6);
+		--newsfeed-text-4: rgba(205, 205, 205, 0.5);
+		--newsfeed-fill-1: var(--graph_bg_thick);
+		--newsfeed-fill-2: var(--graph_bg_regular);
 
 		--newsfeed-radius: /*[[T_CUSTOM_RADIUS]]*/;
 		--newsfeed-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
@@ -1135,9 +1171,8 @@
 		--newsfeed-filter-glasses: blur(/*[[T_CUSTOM_GLASS]]*/);
 
 		/*覆盖b站颜色变量*/
-		/*[[TB]]*/
-
 		/*[[T_THEME]]*/
+		/*[[TB]]*/
 
 		--text_hover: var(--newsfeed-text-1);
 		--text_active: var(--newsfeed-text-2);
@@ -1163,10 +1198,6 @@
 		--graph_weak: var(--newsfeed-text-1);
 		--graph_medium: var(--newsfeed-text-2);
 		--graph_bold: var(--newsfeed-text-3);
-
-		--graph_bg_thin: var(--newsfeed-fill-1);
-		--graph_bg_regular: var(--newsfeed-fill-2);
-		--graph_bg_thick: var(--newsfeed-fill-2);
 
 		--graph_bg_thin_float: var(--newsfeed-fill-1);
 		--graph_bg_regular_float: var(--newsfeed-fill-2);
