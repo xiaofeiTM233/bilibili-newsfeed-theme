@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			哔哩哔哩新动态页主题
 @namespace		bilibili-new-newsfeed-theme
-@version		3.0.3+20260718
+@version		3.0.7+20260921
 @description	深度适配bilibili动态页，阿b就是屑
 @author			飞小RAN <xiaofeiTM233@vip.qq.com> (https://02000721.xyz)
 @homepageURL	https://github.com/xiaofeiTM233/bilibili-newsfeed-theme
@@ -58,8 +58,8 @@
 	EOT;
 
 	T_THEME_A "保持主题颜色（建议搭配B站深色主题）" <<<EOT
-		--newsfeed-fill-1: var(--graph_bg_thick);
-		--newsfeed-fill-2: var(--graph_bg_regular);
+		--newsfeed-fill-1: var(--newsfeed-cover);
+		--newsfeed-fill-2: var(--newsfeed-cover);
 		--newsfeed-text-1: rgba(255, 255, 255, 0.8);
 		--newsfeed-text-2: rgba(255, 255, 255, 0.7);
 		--newsfeed-text-3: rgba(205, 205, 205, 0.6);
@@ -155,7 +155,8 @@
 	OFF "关闭" <<<EOT
 	EOT;
 	ON "开启" <<<EOT
-		#app > div.bili-dyn-home--member > aside.right > section:nth-child(1) {
+		aside.right > section:has(> .bili-dyn-banner),
+		aside.right > section:nth-child(1) {
 			display: none!important;
 		}
 	EOT;
@@ -245,11 +246,14 @@
 		margin-top: 12px;
 	}
 	/*左上个人卡片*/
-	.bili-dyn-my-info {
+	.bili-dyn-my-info,
+	.bili-dyn-my-info--skeleton,
+	.bili-dyn-login-register {
 		background: var(--bg1);
 		border-radius: var(--newsfeed-radius);
 		backdrop-filter: var(--newsfeed-filter);
 		box-shadow: var(--newsfeed-shadow);
+		padding: 20px 16px;
 	}
 	/*左上个人卡片头像昵称框*/
 	.bili-dyn-my-info__header {
@@ -259,6 +263,10 @@
 	/*左上个人卡片昵称*/
 	.bili-dyn-my-info__header .info__name.default:hover {
 		color: var(--newsfeed-theme-color)!important;
+	}
+	.bili-dyn-my-info__header .avatar.b-img:after {
+		border-radius: 50%;
+		background-size: 100%;
 	}
 	/*左上个人卡片数据*/
 	.bili-dyn-my-info__stats {
@@ -387,18 +395,14 @@
 		border: none;
 		box-shadow: var(--newsfeed-shadow);
 	}
-	.bili-dyn-up-list__item .bili-dyn-up-list__item__face__img {
+	.bili-dyn-up-list__item .bili-dyn-up-list__item__face .b-img:after {
 		border-radius: 50%;
+		background-size: 100%;
 	}
 	.bili-dyn-up-list__item:hover .bili-dyn-up-list__item__face__img {
 		border: 0;
+		border-radius: 50%;
 		box-shadow: 0px 5px 15px var(--newsfeed-theme-color-30);
-		border-radius: 50%;
-	}
-	/*up主卡片预设头像样式*/
-	.bili-dyn-up-list__item .bili-dyn-up-list__item__face__img .b-img.sleepy:after {
-		border-radius: 50%;
-		background-size: 100%;
 	}
 	/*视频分类*/
 	.bili-dyn-list-tabs {
@@ -604,9 +608,13 @@
 		margin-right: 12px;
 	}
 	/*LOGO修改*/
+	.bili-header .left-entry-main > .home-page-panel-entry .trigger-text,
 	.bili-header .left-entry__title .mini-header__title > span,
 	.bili-header .left-entry__title .mini-header__logo {
 		display: none;
+	}
+	.left-entry .left-entry__item.home-page-panel-entry .left-entry__item-trigger .big-logo.trigger-icon {
+		margin: 0;
 	}
 	.bili-header .left-entry__title .mini-header__title .mini-header__arrow {
 		color: white;
@@ -940,6 +948,7 @@
 		}
 	}
 	/*投稿图标*/
+	.right-upload-entry .upload-entry__trigger,
 	.bili-header .header-upload-entry {
 		background: var(--newsfeed-theme-color);
 		color: white;
@@ -947,6 +956,7 @@
 		transition: .3s ease-out;
 		margin-right: 12px;
 	}
+	.right-upload-entry .upload-entry__trigger:hover,
 	.bili-header .header-upload-entry:hover {
 		background: var(--newsfeed-theme-color);
 		filter: brightness(1.1)
@@ -988,8 +998,10 @@
 	}
 	/*去除礙眼物*/
 	/*顶栏左侧多余项目，保留首页按钮*/
+	.bili-header .left-entry-main > .left-entry__item:not(:first-child),
 	.bili-header .left-entry li:not(:first-child),
 	/*大会员*/
+	.bili-header .right-entry__main > .right-entry__item.vip-entry,
 	.bili-header .right-entry li:nth-child(2),
 	/*热门搜寻*/
 	.search-panel .trending,
@@ -1020,9 +1032,40 @@
 		display: flex;
 		justify-content: center;
 	}
+	.bili-header.bili-header--mini .bili-header__bar,
 	.mini-header {
 		background: #0000!important;
 		box-shadow: 0 2px 4px #0000!important;
+	}
+}
+@-moz-document url-prefix("https://t.bilibili.com") {
+	.bili-tabs__header,
+	#app .content .card {
+		background-color: #0000;
+	}
+	.card .bili-dyn-item .bili-dyn-item__main {
+		padding-bottom: 1.5em;
+	}
+	.sidebar-wrap .side-toolbar__box,
+	.sidebar-wrap .side-toolbar__bottom .side-toolbar__btn {
+		background: var(--bg1);
+		border-radius: var(--newsfeed-radius);
+		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
+	}
+	#app .content .dyn-tabs {
+		background: none;
+		border-radius: var(--newsfeed-radius);
+		position: relative !important;
+	}
+	#app .content .dyn-tabs::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: var(--bg1);
+		border-radius: var(--newsfeed-radius);
+		backdrop-filter: var(--newsfeed-filter);
+		box-shadow: var(--newsfeed-shadow);
 	}
 }
 @-moz-document url-prefix("https://t.bilibili.com") {
